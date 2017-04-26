@@ -1,0 +1,23 @@
+.menuizquierda {
+  margin-left: -10px;
+  background-image: url('../img/menu_izquierdo.png');
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 980px;
+}
+
+#ulizquierdo {
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 200px;
+}
+
+.opciones {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.opciones:hover {
+  transition-duration: 0.5s;
+  opacity: 0.5;
+}

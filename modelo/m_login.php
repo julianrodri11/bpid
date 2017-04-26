@@ -9,6 +9,7 @@ class m_login
    public function iniciarSesion($usuario, $contrasena)
    {
       echo "<h1>$usuario -- $contrasena</h1>";
+      header('Location: ../vistas/index.php');
    }
 
    #funcion que sirve para insertar login
