@@ -1,3 +1,7 @@
+body {
+  background-color: #E6E6E7;
+}
+
 .menuizquierda {
   margin-left: -10px;
   background-image: url('../img/menu_izquierdo.png');
@@ -12,12 +16,28 @@
   margin-top: 200px;
 }
 
+#ulizquierdo2 {
+  position: absolute;
+  margin-left: -40px;
+  margin-top: 160px;
+}
+
 .opciones {
   position: relative;
   margin-bottom: 8px;
 }
 
+.opcionesbtn {
+  margin-bottom: 16px;
+}
+
 .opciones:hover {
   transition-duration: 0.5s;
   opacity: 0.5;
+}
+
+#bajar {
+  position: absolute;
+  margin-left: -40px;
+  margin-top: 200px;
 }
