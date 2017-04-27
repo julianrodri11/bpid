@@ -27,7 +27,7 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col s12 m2 l2"><img src="img/opcion2.png"/></div>
+						<div class="col s12 m2 l2"><div class="etiquetafrm"><div class="textofrm">NOMBRE ETIQUETA</div></div></div>
 						<div class="col s12 m10 l10">
 							<div class="row">
 								<div class="opcionesbtn">
@@ -41,7 +41,7 @@
 					</div>
 
 					<div class="row">
-						<div class="col s12 m2 l2"><img src="img/opcion2.png"/></div>
+						<div class="col s12 m2 l2"><div class="etiquetafrm"><div class="textofrm">NOMBRE ETIQUETA</div></div></div>
 						<div class="col s12 m10 l10">
 							<div class="row">
 								<div class="opcionesbtn">
@@ -55,7 +55,7 @@
 					</div>
 
 					<div class="row">
-						<div class="col s12 m2 l2"><img src="img/opcion2.png"/></div>
+						<div class="col s12 m2 l2"><div class="etiquetafrm"><div class="textofrm">NOMBRE ETIQUETA</div></div></div>
 						<div class="col s12 m10 l10">
 							<div class="row">
 								<div class="opcionesbtn">
@@ -69,7 +69,7 @@
 					</div>
 
 					<div class="row">
-						<div class="col s12 m2 l2"><img src="img/opcion2.png"/></div>
+						<div class="col s12 m2 l2"><div class="etiquetafrm"><div class="textofrm">NOMBRE ETIQUETA</div></div></div>
 						<div class="col s12 m10 l10">
 							<div class="row">
 								<div class="opcionesbtn">
@@ -83,7 +83,7 @@
 					</div>
 
 					<div class="row">
-						<div class="col s12 m2 l2"><img src="img/opcion2.png"/></div>
+						<div class="col s12 m2 l2"><div class="etiquetafrm"><div class="textofrm">NOMBRE ETIQUETA</div></div></div>
 						<div class="col s12 m10 l10">
 							<div class="row">
 								<div class="opcionesbtn">
@@ -97,7 +97,7 @@
 					</div>
 
 					<div class="row">
-						<div class="col s12 m2 l2"><img src="img/opcion2.png"/></div>
+						<div class="col s12 m2 l2"><div class="etiquetafrm"><div class="textofrm">NOMBRE ETIQUETA</div></div></div>
 						<div class="col s12 m10 l10">
 							<div class="row">
 								<div class="opcionesbtn">
@@ -111,7 +111,7 @@
 					</div>
 
 					<div class="row">
-						<div class="col s12 m2 l2"><img src="img/opcion2.png"/></div>
+						<div class="col s12 m2 l2"><div class="etiquetafrm"><div class="textofrm">NOMBRE ETIQUETA</div></div></div>
 						<div class="col s12 m10 l10">
 							<div class="row">
 								<div class="opcionesbtn">
@@ -127,7 +127,7 @@
 					</div>
 
 					<div class="row">
-						<div class="col s12 m2 l2"><img src="img/opcion2.png"/></div>
+						<div class="col s12 m2 l2"><div class="etiquetafrm"><div class="textofrm">NOMBRE ETIQUETA</div></div></div>
 						<div class="col s12 m10 l10">
 							<div class="row">
 								<div class="opcionesbtn">
@@ -143,13 +143,13 @@
 					</div>
 
 					<div class="row">
-						<div class="col s12 m2 l2"><img src="img/opcion2.png"/></div>
+						<div class="col s12 m2 l2"><div class="etiquetafrm"><div class="textofrm">NOMBRE ETIQUETA</div></div></div>
 						<div class="col s12 m10 l10">
 							<div class="row">
 								<div class="opcionesbtn">
 									<div class="input-field col s12 m12 l12">
-										<input id="input_text8" type="text" data-length="10"/>
-										<label for="input_text8">Importación Formato MGA</label>
+										<input id="input_text10" type="text" data-length="10"/>
+										<label for="input_text10">Importación Formato MGA</label>
 									</div>
 									<div class="opcionesbtn">
 									</div>
@@ -159,13 +159,13 @@
 					</div>
 
 					<div class="row">
-						<div class="col s12 m2 l2"><img src="img/opcion2.png"/></div>
+						<div class="col s12 m2 l2"><div class="etiquetafrm"><div class="textofrm">NOMBRE ETIQUETA</div></div></div>
 						<div class="col s12 m10 l10">
 							<div class="row">
 								<div class="opcionesbtn">
 									<div class="input-field col s12 m12 l12">
-										<input id="input_text8" type="text" data-length="10"/>
-										<label for="input_text8">Importación Formato MGA</label>
+										<input id="input_text11" type="text" data-length="10"/>
+										<label for="input_text11">Importación Formato MGA</label>
 									</div>
 									<div class="opcionesbtn">
 									</div>

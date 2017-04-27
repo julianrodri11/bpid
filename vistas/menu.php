@@ -15,13 +15,13 @@
 			<div class="menuizquierda">
 			<!--menu oculto cuando la pantalla se hace pequeña-->
 				<ul id="ulizquierdo">
-					<li class="opciones"><div class="imgul"></div></li>
-					<li class="opciones"><div class="imgul"></div></li>
-					<li class="opciones"><div class="imgul"></div></li>
-					<li class="opciones"><div class="imgul"></div></li>
-					<li class="opciones"><div class="imgul"></div></li>
-					<li class="opciones"><div class="imgul"></div></li>
-					<li class="opciones"><div class="imgul"></div></li>
+					<li class="opciones"><div class="imgul">INICIO</div></li>
+					<li class="opciones"><div class="imgul">RADICACIÓN</div></li>
+					<li class="opciones"><div class="imgul">VIABILIDAD</div></li>
+					<li class="opciones"><div class="imgul">CONTROL POSTERIOR V.</div></li>
+					<li class="opciones"><div class="imgul">ACTUALIZACIÓN</div></li>
+					<li class="opciones"><div class="imgul">EJECUCIÓN</div></li>
+					<li class="opciones"><div class="imgul">CONSULTAS PROYECTOS</div></li>
 				</ul>
 			</div>
 		</ul>
@@ -32,13 +32,13 @@
 		<div class="col s12 m2 l2 hide-on-med-and-down">
 			<div class="menuizquierda">
 				<ul id="ulizquierdo">
-					<li class="opciones"><div class="imgul"></div></li>
-					<li class="opciones"><div class="imgul"></div></li>
-					<li class="opciones"><div class="imgul"></div></li>
-					<li class="opciones"><div class="imgul"></div></li>
-					<li class="opciones"><div class="imgul"></div></li>
-					<li class="opciones"><div class="imgul"></div></li>
-					<li class="opciones"><div class="imgul"></div></li>
+					<li class="opciones"><div class="imgul">INICIO</div></li>
+					<li class="opciones"><div class="imgul">RADICACIÓN</div></li>
+					<li class="opciones"><div class="imgul">VIABILIDAD</div></li>
+					<li class="opciones"><div class="imgul">CONTROL POSTERIOR V.</div></li>
+					<li class="opciones"><div class="imgul">ACTUALIZACIÓN</div></li>
+					<li class="opciones"><div class="imgul">EJECUCIÓN</div></li>
+					<li class="opciones"><div class="imgul">CONSULTAS PROYECTOS</div></li>
 				</ul>
 			</div>
 		</div>
