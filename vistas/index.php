@@ -177,7 +177,9 @@
 
 
 				</div>
-				<div class="col s12 m1 l1"></div>
+				<div class="col s12 m12 l12">
+					<?php require_once "footer.php";?>
+				</div>
 			</div>
 		</div>
 
