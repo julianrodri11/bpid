@@ -1,9 +1,8 @@
-<script type="text/javascript" src="js/formularios/frm_crear_usuario.js"></script>
 <div class="col s12 m11 l9">
 			<div class="bajar">
 				<div class="container-fluid">
 					<div class="row">
-						<div class="col s12 m2 l2"><div class="etiquetas">CEDULA</div></div>
+						<div class="col s12 m2 l2"><img src="img/opcion-1.png"/></div>
 						<div class="col s12 m10 l10">
 							<div class="row">
 								<div class="input-field col s12 m12 l12">

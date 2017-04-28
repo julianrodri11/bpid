@@ -1,7 +1,11 @@
 body {
   background-color: #E6E6E7;
 }
-
+header{
+  background:#2c3e50;
+  color:#fff;
+  height: 80px;
+}
 .menuizquierda {
   margin-left: -10px;
   background-image: url('../img/menu_izquierdo.png');  
@@ -9,24 +13,33 @@ body {
   width: 200px;
   height: 760px;
 }
+/* Codigo para ocultar y mostrar el submenu */
+.menuizquierda li ul
+{ display:none}
+
+.menuizquierda li:hover ul{
+  display:block;
+  cursor: pointer;
+}
 
 #ulizquierdo {
   position: absolute;
   margin-left: 10px;
-  margin-top: 200px;
-}
+  margin-top: 170px;
+  
 
+}
 .opciones {
   position: relative;
   margin-bottom: 8px;
 }
-
+/*
 .opciones:hover {
   transition-duration: 0.5s;
   opacity: 0.5;
 }
 
-
+*/
 .row{
   margin-bottom: 0px !important;
 }
@@ -38,6 +51,7 @@ body {
   background-size: 155px auto;
   background-repeat: no-repeat;
   color: #FFFFFF;
+  
 }
 
 @media only screen and (max-width: 600px) {
@@ -72,3 +86,4 @@ body {
   }
   
 }
+
