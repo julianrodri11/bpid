@@ -22,6 +22,7 @@
 					<li class="opciones"><div class="imgul">ACTUALIZACIÓN</div></li>
 					<li class="opciones"><div class="imgul">EJECUCIÓN</div></li>
 					<li class="opciones"><div class="imgul">CONSULTAS PROYECTOS</div></li>
+					<li class=""><div class="imgusuario"><div id="nombresesion">JULIAN RODRIGUEZ</div></div></li>
 				</ul>
 			</div>
 		</ul>
@@ -39,6 +40,7 @@
 					<li class="opciones"><div class="imgul">ACTUALIZACIÓN</div></li>
 					<li class="opciones"><div class="imgul">EJECUCIÓN</div></li>
 					<li class="opciones"><div class="imgul">CONSULTAS PROYECTOS</div></li>
+					<li class=""><div class="imgusuario"><div id="nombresesion">JULIAN RODRIGUEZ</div></div></li>
 				</ul>
 			</div>
 		</div>
