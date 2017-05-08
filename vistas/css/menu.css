@@ -1,89 +1,129 @@
 body {
   background-color: #E6E6E7;
 }
-header{
-  background:#2c3e50;
-  color:#fff;
-  height: 80px;
-}
+
+
+/*
+importando fuente para los menus
+*/
+
+
+/*@font-face {
+  font-family: "Gill Sans Mt";
+  src: url("../fonts/gill-sans-mt.ttf");
+  }*/
+
 .menuizquierda {
   margin-left: -10px;
-  background-image: url('../img/menu_izquierdo.png');  
+  background-image: url('../img/menu_izquierdo.png');
   background-repeat: no-repeat;
   width: 200px;
   height: 760px;
-}
-/* Codigo para ocultar y mostrar el submenu */
-.menuizquierda li ul
-{ display:none}
-
-.menuizquierda li:hover ul{
-  display:block;
-  cursor: pointer;
 }
 
 #ulizquierdo {
   position: absolute;
   margin-left: 10px;
-  margin-top: 170px;
-  
-
+  margin-top: 200px;
 }
+
 .opciones {
   position: relative;
   margin-bottom: 8px;
 }
-/*
+
 .opciones:hover {
   transition-duration: 0.5s;
   opacity: 0.5;
 }
 
-*/
-.row{
+.row {
   margin-bottom: 0px !important;
 }
 
-.imgul
-{ width: 170px;
+.opciones {
+  width: 168px;
   height: 35px;
   background-image: url("../img/opciones.png");
-  background-size: 155px auto;
+  /*background-size: 165px auto;*/
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
+}
+
+.imgul {
   color: #FFFFFF;
-  
+  font-family: 'Gill Sans MT';
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+  font-size: 13px;
+  top: 5px;
+}
+
+.etiquetafrm {
+  width: 168px;
+  height: 35px;
+  background-image: url("../img/opcion2.png");
+  background-size: 165px auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.textofrm {
+  position: relative;
+  font-family: 'Gill Sans MT';
+  text-align: center;
+  font-size: 13px;
+  top: 5px;
 }
 
 @media only screen and (max-width: 600px) {
-
+  .imgul {
+    position: relative;
+    top: -9px;
+  }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 992px) {
   .bajar {
-    position: relative; 
+    position: relative;
     margin-left: 2rem;
     margin-top: 15px;
   }
-  .opcionesbtn
-  {
-    position: relative; 
-    margin-left: 5rem;
+  .opcionesbtn {
+    position: relative;
+    margin-left: 7rem;
   }
-  
+  .imgul {
+    position: relative;
+    top: -9px;
+  }
 }
 
 @media only screen and (min-width: 993px) {
   .bajar {
-    position: relative; 
+    position: relative;
     margin-left: 2rem;
     margin-top: 200px;
   }
-
-  .opcionesbtn
-  {
-    position: relative; 
+  .opcionesbtn {
+    position: relative;
     margin-left: 4rem;
   }
-  
 }
 
+
+/*
+*
+* DISEÑO PARA EL FOOTER
+* 
+*/
+
+#footer {
+  position: relative;
+  margin-top: 2rem;
+  font-family: 'Gill Sans MT';
+  font-style: italic;
+  font-weight: bold;
+}
