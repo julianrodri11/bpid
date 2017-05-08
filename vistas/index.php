@@ -185,12 +185,13 @@
 						<div class="col s2 m2 l2"></div>
 						<div class="col s8 m8 l12 center-align">
 							<br>
-							<button class="btn waves-effect waves-light col s12 m12 l12 center-align" type="submit" onclick="validar()">Enviar
+							<button class="btn waves-effect waves-light col s12 m12 l12 center-align" onclick="validar()">Enviar
 								<i class="material-icons right">send</i>
 							</button>
 						</div>
 						<div class="col s2 m2 l2"></div>
 					</div>
+
 				</div>
 					<!-- MODAL-->
 					<div class="container">
