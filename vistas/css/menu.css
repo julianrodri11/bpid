@@ -51,6 +51,10 @@ importando fuente para los menus
   background-repeat: no-repeat;
 }
 
+.opcionesli {
+  background-image: url("../img/opcionesli.png");
+}
+
 .imgul {
   color: #FFFFFF;
   font-family: 'Gill Sans MT';
@@ -59,6 +63,45 @@ importando fuente para los menus
   position: relative;
   font-size: 13px;
   top: 5px;
+}
+
+.imgusuario {
+  height: 70px;
+  background-image: url("../img/usuario.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+/* para la imagen inferior del menu de lado izquierdo*/
+
+#nombresesion {
+  position: relative;
+  color: #FFFFFF;
+  text-align: center;
+  top: 100%;
+}
+
+
+/*para el nombre de usuario de la parte superior*/
+
+#nombresesionsup {
+  color: white;
+  position: relative;
+  float: left;
+}
+
+#fechasupederecha {
+  color: white;
+  float: right;
+}
+
+.barra {
+  line-height: 3.0;
+  background-color: #008643;
+  /*#86b440;*/
+  color: white;
 }
 
 .etiquetafrm {
@@ -105,7 +148,7 @@ importando fuente para los menus
   .bajar {
     position: relative;
     margin-left: 2rem;
-    margin-top: 200px;
+    margin-top: 5rem;
   }
   .opcionesbtn {
     position: relative;
@@ -126,4 +169,41 @@ importando fuente para los menus
   font-family: 'Gill Sans MT';
   font-style: italic;
   font-weight: bold;
+}
+
+
+/*titulo del formulario*/
+
+.titulofrm {
+  font-family: 'Gill Sans MT';
+  font-size: 22px;
+  /*font-style: italic;
+  font-weight: bold;*/
+}
+
+.amarilla {
+  position: relative;
+  width: 210px;
+  height: 30px;
+  background-color: #FFCA04;
+  -webkit-transform: translate(0px, 0px) rotate(0deg) skew(-16deg, 0deg) scale(1, 1);
+  -moz-transform: translate(0px, 0px) rotate(0deg) skew(-16deg, 0deg) scale(1, 1);
+  -o-transform: translate(0px, 0px) rotate(0deg) skew(-16deg, 0deg) scale(1, 1);
+  -ms-transform: translate(0px, 0px) rotate(0deg) skew(-16deg, 0deg) scale(1, 1);
+  transform: translate(0px, 0px) rotate(0deg) skew(-16deg, 0deg) scale(1, 1);
+}
+
+#lblamarilla {
+  font-family: 'Gill Sans MT';
+  font-size: 13px;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  margin-top: -25px;
+  margin-left: 3px;
+  text-align: center;
+}
+
+#inicio, #radicacion, #viabilidad, #controlposterior, #actualizacion, #ejecucion, #consultas {
+  display: none;
 }
