@@ -207,3 +207,7 @@ importando fuente para los menus
 #inicio, #radicacion, #viabilidad, #controlposterior, #actualizacion, #ejecucion, #consultas {
   display: none;
 }
+
+#inicioOculto, #radicacionOculto, #viabilidadOculto, #controlposteriorOculto, #actualizacionOculto, #ejecucionOculto, #consultasOculto {
+  display: none;
+}

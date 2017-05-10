@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<title></title>
 	<!--Import Google Icon Font-->
 	<?php include_once 'links.php';?>
-	<script type="text/javascript">
 
-
-	</script>
 	<script type="text/javascript" src="js/validacion_nomberform.js"></script>
 </head>
 <body>
@@ -16,7 +13,16 @@
 
 		<?php require_once "menu.php";?>
 		<!--form method="post" name="ejemplo" action="#"></form-->
+
 		<div class="col s12 m11 l9">
+			<div class="row">
+				<div class="col l3"></div>
+				<div class="col l6 center-align"><img src="img/usuario.png" width="300"></div>
+				<div class="col l3"></div>
+			</div>
+		</div>
+
+		<!--div class="col s12 m11 l9">
 			<div class="bajar">
 				<div class="container-fluid">
 
@@ -193,11 +199,11 @@
 					</div>
 
 				</div>
-					<!-- MODAL-->
+					<! - - MODAL- ->
 					<div class="container">
 						<div class="row">
-							<!-- Modal Trigger -->
-							<!-- Modal Structure -->
+							<! - - Modal Trigger - ->
+							<! - - Modal Structure - ->
 							<div id="modal1" class="modal modal-fixed-footer">
 								<div class="modal-content">
 									<h4>Lista de Chequeo</h4>
@@ -215,11 +221,11 @@
 
 						</div>
 					</div>
-				<div class="col s12 m12 l12">
+				<!--div class="col s12 m12 l12">
 					<?php require_once "footer.php";?>
-				</div>
+				</div-->
 			</div>
-		</div>
+		</div-->
 
 	</body>
 	</html>
