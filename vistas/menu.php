@@ -35,7 +35,7 @@
 				case 1.1:
 				case 1.11:$( "#inicio" ).toggle("slow");window.location.href="http://localhost/bpid/vistas/formularios/frm_crear_usuario.php";break
 				case 1.2:
-				case 1.22:$( "#inicio" ).toggle("slow");window.location.href="http://localhost/bpid/vistas/index.php";break
+				case 1.22:$( "#inicio" ).toggle("slow");window.location.href="http://localhost/bpid/vistas/formularios/frm_radicar.php";break
 				case 1.3:
 				case 1.33:$( "#inicio" ).toggle("slow");window.location.href="http://localhost/bpid/vistas/index.php";break
 				case 2.1:

@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Prueba</title>
 	<?php require_once '../links.php';?>
+	<script type="text/javascript" src="../js/validacion_nomberform.js"></script>
 </head>
 <body>
 

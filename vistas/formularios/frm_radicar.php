@@ -1,29 +1,20 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title></title>	
-	<?php include_once 'links.php';?>
-
-	
+	<title>Prueba</title>
+	<?php require_once '../links.php';?>
+	<script type="text/javascript" src="../js/validacion_nomberform.js"></script>
 </head>
 <body>
-	<div class="container-fluid">
-		<?php require_once "menu.php";?>
-		<div class="col s12 m11 l9">
-			<div class="row">
-				<div class="col l3"></div>
-				<div class="col l6 center-align"><img src="img/usuario.png" width="300"></div>
-				<div class="col l3"></div>
-			</div>
-		</div>
 
-		<!--div class="col s12 m11 l9">
+<?php require_once '../menu.php';?>
+<div class="col s12 m11 l9">
 			<div class="bajar">
 				<div class="container-fluid">
 
 					<div class="row">
-						<div class="col s12 m12 l12 center-align"><div class="titulofrm"> TITULO DEL FORMULARIO</div></div>
+						<div class="col s12 m12 l12 center-align"><div class="titulofrm"> RADICAR</div></div>
 						<br><br>
 					</div>
 					<div class="row">
@@ -32,8 +23,15 @@
 							<div class="row">
 								<div class="input-field col s12 m12 l12">
 									<div class="opcionesbtn">
-										<input id="input_text1" type="text" data-length="10"/>
-										<label for="input_text1">Importación Formato MGA</label>
+										<div class="file-field input-field">
+										      <div class="btn">
+										        <span>File</span>
+										        <input type="file" multiple>
+										      </div>
+										      <div class="file-path-wrapper">
+										        <input class="file-path validate" type="text" placeholder="Upload one or more files">
+										      </div>
+										  </div>
 										<div class="descripcion"></div>
 									</div>
 								</div>
@@ -195,11 +193,11 @@
 					</div>
 
 				</div>
-					<! - - MODAL- ->
+					<!-- MODAL-->
 					<div class="container">
 						<div class="row">
-							<! - - Modal Trigger - ->
-							<! - - Modal Structure - ->
+							<!-- Modal Trigger -->
+							<!-- Modal Structure -->
 							<div id="modal1" class="modal modal-fixed-footer">
 								<div class="modal-content">
 									<h4>Lista de Chequeo</h4>
@@ -221,7 +219,10 @@
 					<?php require_once "footer.php";?>
 				</div-->
 			</div>
-		</div-->
+		</div>
 
-	</body>
-	</html>
+
+
+
+</body>
+</html>
