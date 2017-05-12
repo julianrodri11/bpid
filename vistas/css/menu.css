@@ -150,6 +150,11 @@ importando fuente para los menus
     margin-left: 2rem;
     margin-top: 5rem;
   }
+   .bajarimagen {
+    position: relative;
+    margin-left: 20rem;
+    margin-top: 8rem;
+  }
   .opcionesbtn {
     position: relative;
     margin-left: 4rem;

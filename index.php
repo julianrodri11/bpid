@@ -83,11 +83,15 @@
 				</form>
 				</div>
 			</div>
+
 		</div>
+
 		<div id="derecha">
 			<div id="imglogo"></div>
-		</div>
-	</div>
 
-</body>
+		</div>
+		
+	</div>
+	
+	</body>
 </html>

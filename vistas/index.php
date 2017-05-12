@@ -13,7 +13,9 @@
 		<div class="col s12 m11 l9">
 			<div class="row">
 				<div class="col l3"></div>
-				<div class="col l6 center-align"><img src="img/usuario.png" width="300"></div>
+				<div class="bajarimagen">
+				<div class="col l6 center-align" ><img src="img/gobernacion.png" width="300"></div>
+				</div>
 				<div class="col l3"></div>
 			</div>
 		</div>
@@ -217,10 +219,13 @@
 
 						</div>
 					</div>
-				<!--div class="col s12 m12 l12">
+				<div class="col s12 m12 l12">
 					<?php require_once "footer.php";?>
 				</div-->
 			</div>
+			<div class="col s12 m12 l12">
+					<?php require_once "footer.php";?>
+				</div>
 		</div-->
 
 	</body>
