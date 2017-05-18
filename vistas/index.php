@@ -1,22 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<title></title>
-	<!--Import Google Icon Font-->
 	<?php include_once 'links.php';?>
-	<script type="text/javascript">
+	<style type="text/css">
+		#imgindex{
+			height: 700px;
+			display: -webkit-flex;
+			display:         flex;
+			-webkit-align-items: center;
+			align-items: center;
+			-webkit-justify-content: center;
+			justify-content: center;
+			text-align: center;
+		}
+	</style>
 
 
-	</script>
-	<script type="text/javascript" src="js/validacion_nomberform.js"></script>
 </head>
 <body>
 	<div class="container-fluid">
-
 		<?php require_once "menu.php";?>
-		<!--form method="post" name="ejemplo" action="#"></form-->
 		<div class="col s12 m11 l9">
+			<div class="row">
+				<div class="col s12 m12 l3"></div>
+				<div class="col s12 m12 l6 center-align" id="imgindex"><img src="img/corazonmundo.png" width="300"></div>
+				<div class="col s12 m12 l3"></div>
+			</div>
+		</div>
+
+		<!--div class="col s12 m11 l9">
 			<div class="bajar">
 				<div class="container-fluid">
 
@@ -185,18 +199,19 @@
 						<div class="col s2 m2 l2"></div>
 						<div class="col s8 m8 l12 center-align">
 							<br>
-							<button class="btn waves-effect waves-light col s12 m12 l12 center-align" type="submit" onclick="validar()">Enviar
+							<button class="btn waves-effect waves-light col s12 m12 l12 center-align" onclick="validar()">Enviar
 								<i class="material-icons right">send</i>
 							</button>
 						</div>
 						<div class="col s2 m2 l2"></div>
 					</div>
+
 				</div>
-					<!-- MODAL-->
+					<! - - MODAL- ->
 					<div class="container">
 						<div class="row">
-							<!-- Modal Trigger -->
-							<!-- Modal Structure -->
+							<! - - Modal Trigger - ->
+							<! - - Modal Structure - ->
 							<div id="modal1" class="modal modal-fixed-footer">
 								<div class="modal-content">
 									<h4>Lista de Chequeo</h4>
@@ -214,11 +229,11 @@
 
 						</div>
 					</div>
-				<div class="col s12 m12 l12">
+				<!--div class="col s12 m12 l12">
 					<?php require_once "footer.php";?>
-				</div>
+				</div-->
 			</div>
-		</div>
+		</div-->
 
 	</body>
 	</html>

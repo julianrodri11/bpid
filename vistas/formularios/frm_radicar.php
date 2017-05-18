@@ -14,7 +14,7 @@
 				<div class="container-fluid">
 
 					<div class="row">
-						<div class="col s12 m12 l12 center-align"><div class="titulofrm"> TITULO DEL FORMULARIO</div></div>
+						<div class="col s12 m12 l12 center-align"><div class="titulofrm"> RADICAR</div></div>
 						<br><br>
 					</div>
 					<div class="row">
@@ -23,8 +23,15 @@
 							<div class="row">
 								<div class="input-field col s12 m12 l12">
 									<div class="opcionesbtn">
-										<input id="input_text1" type="text" data-length="10"/>
-										<label for="input_text1">Importación Formato MGA</label>
+										<div class="file-field input-field">
+										      <div class="btn">
+										        <span>File</span>
+										        <input type="file" multiple>
+										      </div>
+										      <div class="file-path-wrapper">
+										        <input class="file-path validate" type="text" placeholder="Upload one or more files">
+										      </div>
+										  </div>
 										<div class="descripcion"></div>
 									</div>
 								</div>

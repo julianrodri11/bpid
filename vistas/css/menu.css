@@ -51,6 +51,10 @@ importando fuente para los menus
   background-repeat: no-repeat;
 }
 
+.opcionesli {
+  background-image: url("../img/opcionesli.png");
+}
+
 .imgul {
   color: #FFFFFF;
   font-family: 'Gill Sans MT';
@@ -69,11 +73,35 @@ importando fuente para los menus
   background-repeat: no-repeat;
 }
 
+
+/* para la imagen inferior del menu de lado izquierdo*/
+
 #nombresesion {
   position: relative;
   color: #FFFFFF;
   text-align: center;
   top: 100%;
+}
+
+
+/*para el nombre de usuario de la parte superior*/
+
+#nombresesionsup {
+  color: white;
+  position: relative;
+  float: left;
+}
+
+#fechasupederecha {
+  color: white;
+  float: right;
+}
+
+.barra {
+  line-height: 3.0;
+  background-color: #008643;
+  /*#86b440;*/
+  color: white;
 }
 
 .etiquetafrm {
@@ -178,4 +206,12 @@ importando fuente para los menus
   margin-top: -25px;
   margin-left: 3px;
   text-align: center;
+}
+
+#inicio, #radicacion, #viabilidad, #controlposterior, #actualizacion, #ejecucion, #consultas {
+  display: none;
+}
+
+#inicioOculto, #radicacionOculto, #viabilidadOculto, #controlposteriorOculto, #actualizacionOculto, #ejecucionOculto, #consultasOculto {
+  display: none;
 }

@@ -21,3 +21,13 @@ input:not([type]), input[type=text], input[type=password], input[type=email], in
 .btn:hover, .btn-large:hover {
   background-color: #cbd773;
 }
+
+.file-field .btn, .file-field .btn-large {
+  float: left;
+  height: 2rem;
+  line-height: 2rem;
+}
+
+.side-nav {
+  background-color: #d1d1d1;
+}
