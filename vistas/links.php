@@ -15,4 +15,6 @@
 <link rel="stylesheet" type="text/css" href=<?php echo 'http://' . $_SERVER['SERVER_NAME'] . '/bpid/vistas/css/menu.css' ?>>
 <link rel="stylesheet" type="text/css" href=<?php echo 'http://' . $_SERVER['SERVER_NAME'] . '/bpid/vistas/css/cambiosgenerales.css' ?>>
 
+<link rel="shortcut icon" type="image/x-icon" href=<?php echo 'http://' . $_SERVER['SERVER_NAME'] . '/bpid/vistas/img/mod.ico' ?>>
+
 

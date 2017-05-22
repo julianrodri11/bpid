@@ -182,6 +182,8 @@ importando fuente para los menus
 .titulofrm {
   font-family: 'Gill Sans MT';
   font-size: 22px;
+  
+   margin-top: 2px;
   /*font-style: italic;
   font-weight: bold;*/
 }

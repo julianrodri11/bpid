@@ -33,13 +33,13 @@
 			switch(parametro)
 			{
 				case 1.1:
-				case 1.11:$( "#inicio" ).toggle("slow");window.location.href="http://localhost/bpid/vistas/formularios/frm_crear_usuario.php";break
+				case 1.11:$( "#inicio" ).toggle("slow");window.location.href="http://localhost/bpid/vistas/index.php";break
 				case 1.2:
 				case 1.22:$( "#inicio" ).toggle("slow");window.location.href="http://localhost/bpid/vistas/formularios/frm_radicar.php";break
 				case 1.3:
 				case 1.33:$( "#inicio" ).toggle("slow");window.location.href="http://localhost/bpid/vistas/index.php";break
 				case 2.1:
-				case 2.11:$( "#radicacion" ).toggle("slow");window.location.href="http://localhost/bpid/vistas/index.php";break;
+				case 2.11:$( "#radicacion" ).toggle("slow");window.location.href="http://localhost/bpid/vistas/formularios/frm_radicar.php  ?>";break;
 				case 2.2:
 				case 2.22:$( "#radicacion" ).toggle("slow");window.location.href="http://localhost/bpid/vistas/index.php";break;
 				case 2.3:
@@ -100,12 +100,14 @@ echo date("D d - M m - Y H:i:s:A", $time);?>
 				<div class="menuizquierda">
 					<!--menu oculto cuando la pantalla se hace pequeña-->
 					<ul id="ulizquierdo">
-						<li class="opciones"><div class="imgul" onclick="mostrarMenu('1oculto')">INICIO</div></li>
+						<li class="opciones"><div class="imgul" onclick="ocultarMenu(1.11)">INICIO</div></li>
+						<!--
 						<div id="inicioOculto">
 							<li class="opciones opcionesli" onclick="ocultarMenu(1.11)"><div class="imgul">REGISTRAR</div></li>
 							<li class="opciones opcionesli" onclick="ocultarMenu(1.22)"><div class="imgul">ACTUALIZAR</div></li>
 							<li class="opciones opcionesli" onclick="ocultarMenu(1.33)"><div class="imgul">BUSCAR</div></li>
 						</div>
+					-->	
 						<li class="opciones"><div class="imgul" onclick="mostrarMenu('2oculto')">RADICACIÓN</div></li>
 						<div id="radicacionOculto">
 							<li class="opciones opcionesli" onclick="ocultarMenu(2.11)"><div class="imgul">REGISTRAR</div></li>
@@ -153,12 +155,14 @@ echo date("D d - M m - Y H:i:s:A", $time);?>
 			<div class="col s12 m2 l2 hide-on-med-and-down">
 				<div class="menuizquierda">
 					<ul id="ulizquierdo">
-						<li class="opciones"><div class="imgul" onclick="mostrarMenu(1)">INICIO</div></li>
+						<li class="opciones"><div class="imgul" onclick="ocultarMenu(1.1)">INICIO</div></li>
+					<!--
 						<div id="inicio">
 							<li class="opciones opcionesli" onclick="ocultarMenu(1.1)"><div class="imgul">REGISTRAR</div></li>
 							<li class="opciones opcionesli" onclick="ocultarMenu(1.2)"><div class="imgul">ACTUALIZAR</div></li>
 							<li class="opciones opcionesli" onclick="ocultarMenu(1.3)"><div class="imgul">BUSCAR</div></li>
 						</div>
+						-->
 						<li class="opciones"><div class="imgul" onclick="mostrarMenu(2)">RADICACIÓN</div></li>
 						<div id="radicacion">
 							<li class="opciones opcionesli" onclick="ocultarMenu(2.1)"><div class="imgul">REGISTRAR</div></li>

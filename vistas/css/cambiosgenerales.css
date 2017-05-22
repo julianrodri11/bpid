@@ -23,7 +23,11 @@ input:not([type]), input[type=text], input[type=password], input[type=email], in
 }
 
 .file-field .btn, .file-field .btn-large {
-  float: left;
-  height:2rem;
+  float: right;
+  height: 2rem;
   line-height: 2rem;
+}
+
+.side-nav {
+  background-color: #d1d1d1;
 }
