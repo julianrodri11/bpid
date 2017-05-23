@@ -1,4 +1,6 @@
+
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -6,6 +8,7 @@
 	<?php require_once '../links.php';?>
 	<script type="text/javascript" src="../js/formularios/frm_radicar.js"></script>
 </head>
+
 <body>
 
 <?php require_once '../menu.php';?>
@@ -45,8 +48,11 @@
 							<div class="row">
 								<div class="opcionesbtn">
 									<div class="input-field col s12 m12 l12">
-										<input id="frm_nom_proyecto" name="frm_nom_proyecto" type="text" data-length="10" disabled />
-										<label for="frm_nom_proyecto">Nombre Proyecyo</label>
+									<textarea class="materialize-textarea" id="frm_nom_proyecto" name="frm_nom_proyecto">
+									
+									</textarea>
+          								<label for="textarea1">Nombre Proyecyo</label>
+										
 										<div class="descripcion"></div>
 									</div>
 								</div>
@@ -59,8 +65,8 @@
 							<div class="row">
 								<div class="opcionesbtn">
 									<div class="input-field col s12 m12 l12">
-										<input id="frm_sector" name="frm_sector" type="text" data-length="10" disabled/>
-										<label for="frm_sector">Sector de Proyecto</label>
+										<input id="frm_sector" name="frm_sector" type="text" />
+										<label for="frm_sector" id="d_frm_sector">Sector de Proyecto</label>
 										<div class="descripcion"></div>
 									</div>
 								</div>
@@ -73,7 +79,7 @@
 							<div class="row">
 								<div class="opcionesbtn">
 									<div class="input-field col s12 m12 l12">
-										<input id="frm_localizacion" name="frm_localizacion" disabled type="text" data-length="10"/>
+										<input id="frm_localizacion" name="frm_localizacion" type="text" />
 										<label for="frm_localizacion">Localizacion Proyecto</label>
 										<div class="descripcion"></div>
 									</div>
@@ -88,7 +94,7 @@
 							<div class="row">
 								<div class="opcionesbtn">
 									<div class="input-field col s12 m12 l12">
-										<input id="frm_valor" name="frm_valor" type="text" disabled data-length="10"/>
+										<input id="frm_valor" name="frm_valor" type="text" />
 										<label for="frm_valor">Valor Proyecto</label>
 										<div class="descripcion"></div>
 									</div>
@@ -102,7 +108,7 @@
 							<div class="row">
 								<div class="opcionesbtn">
 									<div class="input-field col s12 m12 l12">
-										<input id="frm_eje" name="frm_eje" type="text" disabled data-length="10"/>
+										<input id="frm_eje" name="frm_eje" type="text"  />
 										<label for="frm_eje">Eje Proyecto</label>
 										<div class="descripcion"></div>
 									</div>
@@ -116,7 +122,7 @@
 							<div class="row">
 								<div class="opcionesbtn">
 									<div class="input-field col s12 m12 l12">
-										<input id="frm_programa" name="frm_programa" disabled type="text" data-length="10"/>
+										<input id="frm_programa" name="frm_programa" type="text" />
 										<label for="frm_programa">Programa Proyecto</label>
 										<div class="descripcion"></div>
 									</div>
@@ -131,7 +137,7 @@
 							<div class="row">
 								<div class="opcionesbtn">
 									<div class="input-field col s12 m12 l12">
-										<input id="frm_subprograma" name="frm_subprograma" disabled type="text" data-length="10"/>
+										<input id="frm_subprograma" name="frm_subprograma"  type="text" />
 										<label for="frm_subprograma">Subprograma</label>
 										<div class="descripcion"></div>
 									</div>
