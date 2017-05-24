@@ -165,24 +165,97 @@
 					<!-- MODAL-->
 					<div class="container">
 						<div class="row">
-							<!-- Modal Trigger -->
-							<!-- Modal Structure -->
-							<div id="modal1" class="modal modal-fixed-footer">
-								<div class="modal-content">
-									<h4>Lista de Chequeo</h4>
-									<p>Aqui va la lista de chequeo, cuando haga click en enviar, los datos van al controlador para ser validados y luego ser insertados en el modelo</p>
-									<div class="row">1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore officia placeat velit enim obcaecati fugiat, suscipit sequi, voluptatibus eum consequatur accusamus adipisci laboriosam nulla veritatis vero dolores quo minima? Repudiandae.</div>
-									<div class="row">2. FUGIAT EIUS, ANIMI ITAQUE NEMO CULPA MAGNI DESERUNT LABORIOSAM, RECUSANDAE A EX, BEATAE, FACILIS ACCUSAMUS NECESSITATIBUS QUAERAT ELIGENDI SIMILIQUE NULLA IPSUM! NULLA ESSE AMET NON AT EARUM CUMQUE TEMPORA QUAE?</div>
-									<div class="row">3. Ducimus vel magnam quis ea explicabo repellat officia quaerat optio qui delectus beatae dolorem voluptatum iusto unde necessitatibus recusandae ut eius inventore quasi, repellendus in maxime. Atque, vero omnis quidem?</div>
-									<div class="row">4. PROVIDENT UT, IMPEDIT OBCAECATI MAGNAM LABORIOSAM NOBIS, RATIONE OFFICIA CONSEQUUNTUR BLANDITIIS RERUM NECESSITATIBUS CONSECTETUR SIMILIQUE EIUS NISI NIHIL OPTIO DOLOR EAQUE EXPLICABO VEL APERIAM? MOLESTIAS LABORIOSAM QUOD EXPLICABO, REPELLENDUS INCIDUNT.</div>
+								<div id="modal1" class="modal modal-fixed-footer">
+								<div class="modal-content" >
+									<h5>DATOS COMPLEMENTARIOS</h5>
+									<div class="row">
+        							<div class="input-field col s12">
+							         <input  id="frm_entidad" name="frm_entidad" type="text" class="validate">
+         							 <label for="frm_entidad" id="lbl_frm_entidad">ENTIDAD PROPONENTE</label>
+         							 <div id="d_frm_entidad"></div>
+							        </div>
+							      </div>
+							      <BR>
+							      <div class="row">
+        							<div class="input-field col s12">
+							       <input  id="frm_entidad_ejecuta" name="frm_entidad_ejecuta" type="text" class="validate">
+         							 <label for="frm_entidad_ejecuta" id="lbl_">ENTIDAD EJECUTANTE</label>
+							        </div>
+							      </div>
+						
+								<br>
+						      <div class="row">
+						      <h6>RESPONSABLE DEL PROYECTO</h6>
+						        <div class="input-field col s6">
+						          <input  id="frm_id_responsable" name="frm_id_responsable" type="text" class="validate">
+						          <label for="first_name">No IDENTIFICACION</label>
+						        </div>
+						        <div class="input-field col s6">
+						          <input id="frm_nom_responsable" name="frm_nom_responsable" type="text" class="validate">
+						          <label for="last_name">NOMBRE RESPONSABLE</label>
+						        </div>
+						      </div>
+						      <div class="row">
+						      <br>
+						        <div class="input-field col s6">
+						          <input  id="frm_cargo_responsable" name="frm_cargo_responsable" type="text" class="validate">
+						          <label for="first_name">CARGO</label>
+						        </div>
+						        <div class="input-field col s6">
+						          <input id="frm_dir_responsable" name="frm_dir_responsable" type="text" class="validate">
+						          <label for="last_name">DIRECCION</label>
+						        </div>
+						      </div>
+						      <div class="row">
+						      <br>
+						        <div class="input-field col s6">
+						          <input  id="frm_tel_responsable" name="frm_tel_responsable" type="text" class="validate">
+						          <label for="first_name">TELEFONO/FAX</label>
+						        </div>
+						        <div class="input-field col s6">
+						          <input id="frm_cel_responsable" name="frm_cel_responsable" type="text" class="validate">
+						          <label for="last_name">CELULAR</label>
+						        </div>
+						      </div>
+						      <br>
+						      <div class="row">
+        							<div class="input-field col s12">
+							       <input  id="frm_correo" name="frm_correo" type="email" class="validate">
+         							 <label for="first_name">CORREO ELECTRONICO</label>
+							        </div>
+							    </div>
+							      <br>
+							      <div class="row">
+						      <h6>DATOS PERSONA QUE ENTREGA EL PROYECTO</h6>
+						        <div class="input-field col s6">
+						          <input  id="frm_id_usuario" name="frm_id_usuario" type="text" class="validate">
+						          <label for="first_name">No IDENTIFICACION</label>
+						        </div>
+						        <div class="input-field col s6">
+						          <input id="frm_nom_usuario" name="frm_nom_usuario" type="text" class="validate">
+						          <label for="last_name">NOMBRE RESPONSABLE</label>
+						        </div>
+						      </div>
+						      <br>
+						       <h6>OBSERVACIONES</h6>
+						      <div class="row">
+        							<div class="input-field col s12">
+							       <textarea class="materialize-textarea" id="frm_observaciones" name="frm_observaciones">
+									</textarea>
+         							 <label for="first_name">OBSERVACIONES</label>
+							        </div>
+							    </div>
 								</div>
+
 								<div class="modal-footer">
-									<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
-									<a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat ">Disagree</a>
+								<a href="#!" onclick="almacenar()" class="modal-action  waves-effect waves-green btn-flat ">Guardar</a>
+								<a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat ">Cancelar</a>
 								</div>
 							</div>
-
+							
+							 
 						</div>
+
 					</div>
 				<!--div class="col s12 m12 l12">
 					<?php require_once "footer.php";?>

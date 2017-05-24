@@ -1,9 +1,12 @@
 // JavaScript Document
 // Desarrollado Ing Dario Santacruz
 
+
+            
 $(document).ready(function() {
    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
    $('.modal').modal();
+    $('select').material_select();
 });
 /*
 FUNCION QUE DESPUES DE HACER CLICK EN EL BOTON ENVIAR SE ABRE EL DIALOG
@@ -66,3 +69,38 @@ function Borrar() {
 	document.getElementById("frm_radicar").reset();
 
 	}
+
+//FUNCION PARA VALIDAR CAMPOS DE FORMULARIO
+function almacenar()
+{
+	
+	document.getElementById("d_frm_entidad").innerHTML='requerido';
+/*
+	$("#frm_radicar").validate({
+        rules: {
+            frm_entidad: {
+                required: true,
+                
+            },
+                            
+        },
+        //For custom messages
+        messages: {
+            frm_entidad:{
+                required: "Digite Entidad Proponente",
+                
+            },
+            
+        },
+        errorElement : 'div',
+        errorPlacement: function(error, element) {
+          var placement = $(element).data('error');
+          if (placement) {
+            $(placement).append(error)
+          } else {
+            error.insertAfter(element);
+          }
+        }
+     });
+     */
+}	

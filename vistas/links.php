@@ -12,6 +12,8 @@
 <!--script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script-->
 <script type="text/javascript" src=<?php echo 'http://' . $_SERVER['SERVER_NAME'] . '/bpid/vistas/js/jquery-2.1.1.min.js' ?>></script>
 <script type="text/javascript" src=<?php echo 'http://' . $_SERVER['SERVER_NAME'] . '/bpid/vistas/js/materialize.min.js' ?>></script>
+<script type="text/javascript" src=<?php echo 'http://' . $_SERVER['SERVER_NAME'] . '/bpid/vistas/js/jquery-validation/dist/jquery.validate.js' ?>></script>
+
 <link rel="stylesheet" type="text/css" href=<?php echo 'http://' . $_SERVER['SERVER_NAME'] . '/bpid/vistas/css/menu.css' ?>>
 <link rel="stylesheet" type="text/css" href=<?php echo 'http://' . $_SERVER['SERVER_NAME'] . '/bpid/vistas/css/cambiosgenerales.css' ?>>
 
