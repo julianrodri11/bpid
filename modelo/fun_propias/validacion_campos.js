@@ -145,149 +145,7 @@ function letras_mail(e){
 	}
 }
 //--------------habilitar campo para añadir descripcion
-//validaciones formulario contratacion directa
-function habilitar() {
-	valor=document.getElementById("frm_regimen");
-	campo=document.getElementById("frm_regimen_desc");
-	valor=valor.value;
-	if (valor==0) campo.disabled=true;
-	else if (valor==1) campo.disabled=false;
-	else if (valor==2) campo.disabled=true;
-}
-//------
-function mostrar_nit()
-{
-	valor=document.getElementById("frm_tipoidc");
-	campo=document.getElementById("dverificacion1");
-	valor=valor.value;
-	if(valor >= 3 & valor<=5)
-	{
-	campo.style.display='';
-	}
-	else 
-	{
-	campo.style.display='none';
-	}
-}
-//-----
-function mostrar_nit1()
-{
-	valor=document.getElementById("frm_tipoidrep");
-	campo=document.getElementById("dverificacion2");
-	valor=valor.value;
-	if(valor >= 3 & valor<=5)
-	{
-	campo.style.display='';
-	}
-	else 
-	{
-	campo.style.display='none';
-	}
-}
-//mostrar contenido con boton de opcion
-function mostrar_contenido() {
-	campo=document.getElementById("frm_fila1");
-	campo1=document.getElementById("frm_fila2");
-	
-	for(i=0;i<document.frm_contratacion_directa.frm_si_interve.length;i++){
-	if(document.frm_contratacion_directa.frm_si_interve[i].checked){
-	marcado=i;
-	}
-	}
-	valor=document.frm_contratacion_directa.frm_si_interve[marcado].value;
-	if (valor==0) {
-	campo.style.display='';
-	campo1.style.display='';
-	}
-	else if (valor==1){ 
-	campo.style.display='none';
-	campo1.style.display='none';
-	}
-}
-//funcion para mstrar origen de recursos
-function mostrar_destino() {
-	campo=document.getElementById("fila_recursos");
-	
-	
-	for(i=0;i<document.frm_contratacion_directa.frm_destino.length;i++){
-	if(document.frm_contratacion_directa.frm_destino[i].checked){
-	marcado=i;
-	}
-	}
-	valor=document.frm_contratacion_directa.frm_destino[marcado].value;
-	if (valor==0) {
-	campo.style.display='';
-	}
-	else if (valor==1){ 
-	//campo.style.display='none';
-	campo.style.display='';
-	}
-	else if (valor==2){ 
-	campo.style.display='none';
-		}
-}
-//funcion para mostrar registro
-function mostrar_registro_presupuestal() {
-	campo=document.getElementById("fila_unidad");
-	
-	
-	for(i=0;i<document.frm_contratacion_directa.frm_registro_presupuestal.length;i++){
-	if(document.frm_contratacion_directa.frm_registro_presupuestal[i].checked){
-	marcado=i;
-	}
-	}
-	valor=document.frm_contratacion_directa.frm_registro_presupuestal[marcado].value;
-	if (valor==0) {
-	campo.style.display='';
-	}
-	else if (valor==1){ 
-	campo.style.display='none';
-	
-	}
-	
-}
-//Validacion Formulario Adion
-function adicion()
-{
-	valor=document.getElementById("frm_tadicion");
-	campo=document.getElementById("tiempo");
-	campo1=document.getElementById("tiempo1");
-	campo2=document.getElementById("tiempo2");
-	campo3=document.getElementById("tiempo3");
-	
-	valor=valor.value;
-	
-	if (valor=="") {
-	campo.style.display='none';
-	campo1.style.display='none';
-	campo2.style.display='none';
-	campo3.style.display='none';
-	}
-	else if (valor==0){ 
-	campo.style.display='';
-	campo1.style.display='';
-	campo2.style.display='none';
-	campo3.style.display='none'
-	}
-	else if (valor==1){ 
-	campo2.style.display='';
-	campo3.style.display='';
-	campo.style.display='none';
-	campo1.style.display='none';
-	}
-	else if (valor==2){ 
-	campo.style.display='';
-	campo1.style.display='';
-	campo2.style.display='';
-	campo3.style.display='';
-	}
-	else if (valor==3){ 
-	campo.style.display='none';
-	campo1.style.display='none';
-	campo2.style.display='none';
-	campo3.style.display='none';
-	}
-}
+
 //Validacion colocar puntos a la funcion 
 //----------------------
 function format(input)
@@ -390,19 +248,7 @@ clave2=clave2.value;
 			}
    }
 }
-//----funcion ocultar fila 
-function ocultar_fila(campo){
-	fila=document.getElementById(campo);
-	fila.style.display='none';
-	fila.style.display='none';
-	
-}
-//----funcion mostrar fila 
-function mostrar_fila(campo){
-	fila=document.getElementById(campo);
-	fila.style.display='';
-	fila.style.display='';
-}
+
 //----funcion para buscar consulta
 function buscar(consulta,tipo_consulta,numero_columnas)
 {
@@ -440,38 +286,6 @@ function buscar(consulta,tipo_consulta,numero_columnas)
         });
 	return result;
 }
-//funcion para busquedas de contratacion directa
-function buscar_contratacion(consulta,tipo_consulta,numero_columnas)
-{
-	//seleccion de busqueda
-	document.getElementById("campo").innerHTML='<img src="../css/ajax-loader.gif" width="25" height="25">' 
-	contenedor=document.getElementById("contenedor").value;
-	value=contenedor+'//'+tipo_consulta+'//'+numero_columnas
-		 jQuery.ajax({		 
-            type: "POST",
-            url:'../consultas/'+consulta,
-			async: false,
-			data:{value:value},
-            success:function(respuesta){
-			 setTimeout(function(){
-			  if(/Error en tiempo de Ejecucion, Reportar Error al Administrador/.test(respuesta)){
-			 	alert("Error en tiempo de Ejecucion, Reportar Error al Administrador");
-			 	window.top.location ="../index.php";
-			  }
-			  document.getElementById("campo").innerHTML=respuesta
-			  document.getElementById("contenedor").focus();
-			  }, 800);
-			},
-           error: function () {
-		      alert("Error inesperado")
-			  window.top.location="../index.php";	
-			}
-        });
-	return result;
-}
-
-
-
 
 //funcion foco inicial 
 function foco_inicial(campo){
@@ -486,84 +300,6 @@ function seleccionar_opciones_grillas(valores,campos,numero){
 	}
 }
 //funcion validar porcentaje
-function validar_porcentaje(campo,v_min,v_max){
-	respuesta=document.getElementById("d_"+campo);				    respuesta.innerHTML=""    
-	v_max=parseInt(v_max);
-	v_min=parseInt(v_min);
-	var valor=document.getElementById(campo).value;
-	if(valor!=""){
-		if(valor<v_min || valor>v_max){
-			respuesta.innerHTML="Valor incorrecto de Porcentaje"
-		}else{
-			respuesta.innerHTML="Valor Correcto"
-		}
-	}else{
-		respuesta.innerHTML="Este Campo es requerido"
-	}
-}
-//funcion para activar otro tipo de contrato
-//validaciones formulario contratacion directa
-function otro_contrato() {
-	valor=document.getElementById("frm_tipocon").value;
-	campo=document.getElementById("frm_otro");
-	if (valor==9) campo.style.display='';
-	else campo.style.display='none';
-	
-		}
-		//validar hora
-//validacion para existencia del archivo
-
-function verificar_archivo_existe(archivo,proceso,modulo,etiqueta)
-{
-	//proceso=campo=document.getElementById("num_proceso").value;
-	archivo=proceso+archivo;
-	var value=8+"//"+archivo+"/"+modulo;
-	
-					 jQuery.ajax({	
-            type: "POST",
-            url:'../clases/verificar/verificaciones_generales_archivos.php',
-			async: false,
-			data:{value:value},
-            success:function(respuesta){
-					 document.getElementById(etiqueta).innerHTML=""; 
-					 document.getElementById(etiqueta).innerHTML=respuesta 
-				
-			},
-            error: function () {
-				  alert("Error inesperado")
-				  window.top.location="../index.php";
-			}
-			
-        });
-		
-}
-
-//funcion validar con fecha
-function verificar_archivo_existe_otros(archivo,proceso,modulo,etiqueta,fecha,cod_secretaria)
-{
-	//proceso=campo=document.getElementById("num_proceso").value;
-	
-	archivo=proceso+archivo;
-	var value=9+"//"+archivo+"/"+modulo+"/"+fecha+"/"+cod_secretaria+"/"+proceso;
-	
-			 jQuery.ajax({	
-            type: "POST",
-            url:'../clases/verificar/verificaciones_generales_archivos.php',
-			async: false,
-			data:{value:value},
-            success:function(respuesta){
-					 document.getElementById(etiqueta).innerHTML=""; 
-					 document.getElementById(etiqueta).innerHTML=respuesta 
-				
-			},
-            error: function () {
-				  alert("Error inesperado")
-				  window.top.location="../index.php";
-			}
-			
-        });
-		
-}
 
 
 //funcion para agrgar banco de proyectos

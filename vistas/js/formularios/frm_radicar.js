@@ -1,19 +1,40 @@
 // JavaScript Document
 // Desarrollado Ing Dario Santacruz
-
-
-            
+          
 $(document).ready(function() {
    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
    $('.modal').modal();
     $('select').material_select();
+    $("#d_error").dialog({
+						autoOpen: false,
+						modal: true,
+						buttons: {
+						"Cerrar": function () {
+						$(this).dialog("close");
+											  }
+								}
+						});
 });
 /*
 FUNCION QUE DESPUES DE HACER CLICK EN EL BOTON ENVIAR SE ABRE EL DIALOG
  */
 function validar() {
-   $('#modal1').modal('open');
+var nombre_archivo=document.getElementById('frm_archivo').value;
+				if(nombre_archivo=="")
+				{
+					document.getElementById('d_error').innerHTML='<p>POR FAVOR SELECCIONE EL ARCHIVO XML<p>';
+					$("#d_error").dialog("open");
+					//alert("DEBE SELECCIONAR UN ARCHIVO XML ANTES");
+					return false;
+					nombre_archivo.focus();
+				}
+
+				else
+				{
+				   $('#modal1').modal('open');
+				}
 }
+
 //FUNCION PARA CARGAR LOS DATOS BASICOS DEL ARCHIVO XML DE FORMA TEMPORAL
 function archivo_xml()
 {
@@ -74,33 +95,5 @@ function Borrar() {
 function almacenar()
 {
 	
-	document.getElementById("d_frm_entidad").innerHTML='requerido';
-/*
-	$("#frm_radicar").validate({
-        rules: {
-            frm_entidad: {
-                required: true,
-                
-            },
-                            
-        },
-        //For custom messages
-        messages: {
-            frm_entidad:{
-                required: "Digite Entidad Proponente",
-                
-            },
-            
-        },
-        errorElement : 'div',
-        errorPlacement: function(error, element) {
-          var placement = $(element).data('error');
-          if (placement) {
-            $(placement).append(error)
-          } else {
-            error.insertAfter(element);
-          }
-        }
-     });
-     */
+	alert("hola");
 }	
