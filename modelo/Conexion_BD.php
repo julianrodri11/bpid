@@ -12,6 +12,7 @@ class Conexion_BD extends PDO
   private $numrows= null;
   private $conexion;
   private $manejador;
+  var $Consulta_ID = 0;
   protected $transactionCount = 0;
   public function __construct() { $this->conectar(); }
   /**
@@ -46,22 +47,16 @@ class Conexion_BD extends PDO
   /**
    *
    * @todo Permite obtener datos mediante un arreglo asociativo o de objetos, concatenando las columnas y las tablas.
-   *
-   * @access public
-   * @param string $columnas
-   * @param string $tabla
-   * @param bool $getObjects
-   *
-   * @return mixed
-   *
+   
    **/
    
-  public final function consultar($columnas, $tabla, $getObjects=false)
+  public final function consultar($consulta)
   {
+    $getObjects=false;
     $rt = null;
     try
     {
-      $query = $this->conexion->prepare( " SELECT " . $columnas . " FROM " . $tabla );
+      $query = $this->conexion->prepare($consulta );
             $query->execute();
             $this->setNumRows( $query->rowCount() );
             $this->cerrarConexion();
@@ -79,15 +74,7 @@ class Conexion_BD extends PDO
   /**
    *
    * @todo Permite obtener datos mediante un arreglo asociativo o de objetos, concatenando las columnas, las tablas, condición y los valores que serán utilizados.
-   *
-   * @access public
-   * @param string $columnas
-   * @param string $tabla
-   * @param string $condicion
-   * @param mixed  $valores
-   *
-   * @return mixed
-   *
+   
    **/
   public final function consultarCondicion($columnas, $tabla, $condicion, $valores)
   {
@@ -334,13 +321,30 @@ class Conexion_BD extends PDO
          }
  
     public function rollback() # Deshace la transaccion
-       {
-        $conn->rollBack();
+         {
+        $conexion->rollBack();
         }
  
     public function commit()
        {
-       $conex->commit();
+       $conexion->commit();
         }     
+function consulta($id_arreglo,$sql){
+      
+      if ($sql == "") {
+        $this->Error = 'No ha especificado una consulta SQL';
+        return 0;
+      }
+      $query = $this->conexion->prepare($sql);
+      $this->Consulta_ID =$query->execute();
+      if (!$this->Consulta_ID) {
+        //PDOException $e;
+        //$this->Error = PDOException $e;
+        return 0;
+      }
+      
+      $this->setNumRows( $query->rowCount() );
+      return $this->Consulta_ID;
+    }
 }
 ?>

@@ -12,6 +12,7 @@ if($extension=="xml" or $extension=="XML")
 	$datos=simplexml_load_file($ruta);
 	$nombre_proyecto=(string)utf8_decode($datos->Name);
 	$nombre_proyecto=strtoupper(utf8_encode($nombre_proyecto));
+	$numero_proyecto=utf8_decode($datos->Id);
 	$sector=(string)utf8_decode($datos->Sector->Description);
 	$sector=strtoupper(utf8_encode($sector));
 	$departamento=(string)utf8_decode($datos->Localizations->Localization[1]->Department->Name);
@@ -51,7 +52,7 @@ if($extension=="xml" or $extension=="XML")
 					
 				}	
 	$total= number_format($total, 0, '', '.'); 
-	$datos=$nombre_proyecto."/".$sector."/".$departamento."/".$municipio."/".$eje."/".$programa."/".$subprograma."/".$total;
+	$datos=$nombre_proyecto."/".$sector."/".$departamento."/".$municipio."/".$eje."/".$programa."/".$subprograma."/".$total."/".$numero_proyecto;
 	echo $datos;
 }
 else
