@@ -96,6 +96,7 @@ echo date("D d - M m - Y H:i:s:A", $time);?>
 
 			<a href="#" class="brand-logo right"><i class="material-icons">settings</i></a>
 			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+
 			<ul class="side-nav" id="mobile-demo">
 				<div class="menuizquierda">
 					<!--menu oculto cuando la pantalla se hace pequeña-->
