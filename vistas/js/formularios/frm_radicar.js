@@ -120,6 +120,7 @@ function almacenar()
  	var id_usuario=document.getElementById('frm_id_usuario').value;
  	var nombre_usuario=document.getElementById('frm_nom_usuario').value;
  	var observaciones=document.getElementById('frm_observaciones').value;
+ 	observaciones=observaciones.trim();
  	if(observaciones==""){observaciones=-1}
  	var formData=new FormData($("#frm_radicar")[0]);  
  	var nombre_archivo=document.getElementById('frm_archivo').value;
@@ -136,12 +137,12 @@ function almacenar()
 			data:{value:value},
             success:function(respuesta){
 				alert(respuesta)
-				/*
+				
 			if(respuesta==1){ 
 			
 			var formData=new FormData($("#frm_radicar")[0]);  //lo hago por la validacion
 										$.ajax({
-						url:'../clases/crear/crear_nueva_subir_documentos_contratos_subasta.php',
+						  url:'../../controlador/c_archivos.php',
 										type: "POST",
 										data: formData,
 										contentType:false,
@@ -155,12 +156,15 @@ function almacenar()
 			//
 			
 			}
-			if(respuesta==0){alert("ERROR, INTENTELO NUEVAMENTE");return;}
-			if(respuesta==110){alert("ERROR, HAY CAMPOS VACIOS Q DEBEN REGISTRARSE");return;}
-			if(respuesta==2){alert("ERROR, NUMERO DE CONTRATO EXISTSENTE");return;}
-			if(respuesta==3){alert("ERROR,ACTUALICE E INTENTELO NUEVAMENTE");return;}
-			if(respuesta==9){alert("ERROR,NO SE INGRESO LOS DATOS DE INVITACION");return;}
-*/
+			
+			if(respuesta==0){var mensaje="ERROR, INTENTELO NUEVAMENTE"}
+			if(respuesta==2){var mensaje="ERROR,HAY DATOS EN BLANCO QUE DEBEN REGISTRARSE"}
+			if(respuesta==3){var mensaje="ERROR,EL CORREO ELECTRONICO ES INCORRECTO"}
+			if(respuesta==4){var mensaje="ERROR,LOS DATOS DEL PROYECTO NO FUERON INGRESADOS"}
+			if(respuesta==5){var mensaje="ERROR,LOS DATOS DE RADICACION NO FUERON INGRESADOS"}
+			document.getElementById('d_error').innerHTML='<p>'+ mensaje + '</p>';
+			$("#d_error").dialog("open");
+
 										},
 										
             error: function () {

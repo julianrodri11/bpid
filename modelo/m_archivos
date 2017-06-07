@@ -1,0 +1,112 @@
+<?php 
+
+class m_archivos
+{
+   var $con_contra;
+   public function conectar()
+   {  $con_contra = pg_connect("host=localhost dbname=contratacion user=postgres password=123456") or die('No se ha podido conectar: ' . pg_last_error());
+      return $con_contra;
+   }  
+
+   function tildes($cadena)      
+   {  $a_tofind = array('À', 'Á', 'Â', 'Ã', 'Ä', 'Å', 'à', 'á', 'â', 'ã', 'ä', 'å',
+      'Ò', 'Ó', 'Ô', 'Õ', 'Ö', 'Ø', 'ò', 'ó', 'ô', 'õ', 'ö', 'ø',
+      'È', 'É', 'Ê', 'Ë', 'è', 'é', 'ê', 'ë', 'Ç', 'ç',
+      'Ì', 'Í', 'Î', 'Ï', 'ì', 'í', 'î', 'ï',
+      'Ù', 'Ú', 'Û', 'Ü', 'ù', 'ú', 'û', 'ü', 'ÿ', 'Ñ', 'ñ',' ','´',"'",">","<","/","-");
+   
+      $a_replac = array('A', 'A', 'A', 'A', 'A', 'A', 'a', 'a', 'a', 'a', 'a', 'a' ,
+       'O', 'O', 'O', 'O', 'O', 'O', 'o', 'o', 'o', 'o', 'o', 'o'   ,
+       'E', 'E', 'E', 'E', 'e', 'e', 'e', 'e', 'C', 'c' ,
+       'I', 'I', 'I', 'I', 'i', 'i', 'i', 'i',
+       'U', 'U', 'U', 'U', 'u', 'u', 'u', 'u', 'y', 'N', 'n','','_','','','','',"");
+   
+      $nombreImagen = str_replace($a_tofind, $a_replac, $cadena);
+      return $nombreImagen;//    me retorna la cadena sin caracteres especiales
+   }
+   
+      public function archivos($num_proyecto,$cod_bpid,$archivo_tempo,$carpeta)
+   {
+   $carpeta_proceso=$carpeta;//asgino el nombre del proceso al nombre de la carpeta
+   $carpeta_serv="archivos";//nombre de la carpeta donde se almacenan los archivos  
+   //var_dump($arch_temp);echo"<br><hr><br>";
+   foreach($_FILES['archivos']['tmp_name'] as $jr => $error)//recorrer el vector con el nombre del archivo temporal
+   {/*if($error)
+      {     */
+      $ruta_tmp=    $_FILES['archivos']['tmp_name'][$jr];//ruta temporal del archivo
+      $nombre_mal=  $_FILES['archivos']['name'][$jr] ;//verificar si el nombre esta bn escrito
+      $nombre_bien= $this->tildes($nombre_mal);//cambiar caracteres especiales
+      $nombre=   $num_proc.$nombre_bien;//cambio los caracteres especiales por normales
+      $tipo=        $_FILES['archivos']['type'][$jr];//resviso q tipo de archivo es 
+      //$tamano=    $_FILES['archivos']['size'][$jr]; //verificar el tamaño del archivo   
+      $doc=      $_POST['clasedoc'][$jr];//que clase de documento se selecciono     
+      $nom_doc=     $_POST['nombre'][$jr];//nombre del documento digitado     
+      $cod_activacion=1;
+      $fecha_creacion=date("Y-m-d");
+      $hora_creacion=date("H:i:s",time()-0);
+      //$ruta_proceso="/var/www/sistema_contratacion/gestor/$carpeta_serv/$sigla_proceso/$carpeta_proceso";
+      $ruta_proceso="../../gestor/$carpeta_serv/$sigla_proceso/$carpeta_proceso";//carpeta del proceso
+      $ruta_confecha=$num_proc.$fecha;
+      //$ruta_num_proc="$ruta_proceso/$num_proc";//carpeta con el numero del proceso
+      $ruta_num_proc="$ruta_proceso/$ruta_confecha";
+      $rutadestino="$ruta_num_proc/$nombre";//carpeta con
+      
+      if(!file_exists("$ruta_proceso"))//si la carpeta del proceso no existe
+      {//mkdir("$ruta_proceso");
+       mkdir($ruta_proceso, 0777, true);
+      //mkdir("$ruta_proceso/historico");
+      }  //crea ruta_procso            
+
+      if(!file_exists("$ruta_num_proc"))//si no existe la carpeta con el numero del proceso
+      {mkdir("$ruta_num_proc");
+      }  
+      //validar nombre del archivo
+      $correcto=1;
+      /*if(strlen($nombre)>=3 && strlen($nombre)<=500 && strlen($nom_doc)>=3 && strlen($nom_doc)<=500)
+         {  /*       
+           if(file_exists("$rutadestino"))   
+                    {
+              $correcto=2;//en caso de que el archivo ya exista
+              $mensaje="El archivo $archivo YA EXISTE";
+           }*/
+           if($correcto==1){
+               $sql="INSERT INTO archivos values(default,'$nom_doc','$nombre','$num_proc','$id_mod',$fecha,$cod_activacion,'$doc','$fecha_creacion','$hora_creacion','0','0',$secretaria)";     
+               $consulta=@pg_query($sql) or die(pg_last_error());       
+               
+               if($consulta){ 
+               $correcto=1;
+               
+                         }
+               else{$correcto=3;}      //error de insercion en la tabla  
+
+                 
+               if($correcto==1){
+                  
+               if(move_uploaded_file($ruta_tmp,$rutadestino)){  
+               
+               $correcto=1;}          
+            else  
+              {$correcto=4;}
+              }//fin else 
+      
+         }else{//echo"<br><label style='color:red;'>el nombre de: $nombre debe tener entre 3 y 50 caracteres<br>solo se permiten entre 3 y 50 caracteres</label>";
+         $correcto=5;}
+                        // }
+        
+        //fin longitud
+      //}else{echo"muy pesado";}
+   // }else{echo "<br><label style='color:red'>El archivo de Invitación ya existe</label>";}//fin
+      
+// }else{echo"<br><label style='color:red;'>Error debe completar todos los campos</label><br/>";}
+   }//fin for each
+   return $correcto;
+   }//fin funcion archivos
+   
+   
+   
+
+   
+   
+      
+   }/*FIN FUNCION GENERAL*/
+?>
