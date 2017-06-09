@@ -45,6 +45,7 @@
 							</div>
 						</div>
 					</div>
+					
 					<div class="row">
 						<div class="col s12 m2 l2"><div class="etiquetafrm"><div class="textofrm">NOMBRE PROYECTO</div></div></div>
 						<div class="col s12 m10 l10">
@@ -54,8 +55,22 @@
 									<textarea class="materialize-textarea" id="frm_nom_proyecto" name="frm_nom_proyecto">
 									
 									</textarea>
-          								<label for="textarea1">Nombre Proyecyo</label>
+          								<label for="textarea1">Nombre Proyecto</label>
 										
+										<div class="descripcion"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col s12 m2 l2"><div class="etiquetafrm"><div class="textofrm">NUMERO PROYECTO</div></div></div>
+						<div class="col s12 m10 l10">
+							<div class="row">
+								<div class="opcionesbtn">
+									<div class="input-field col s12 m12 l12">
+										<input id="frm_num_proyecto" name="frm_num_proyecto" type="text" />
+										<label for="frm_num_proyecto">numero Proyecto</label>
 										<div class="descripcion"></div>
 									</div>
 								</div>
@@ -258,7 +273,7 @@
 						        </div>
 						        <div class="input-field col s6">
 						          <input id="frm_nom_usuario" name="frm_nom_usuario" type="text" class="validate">
-						          <label for="frm_nom_usuario">NOMBRE RESPONSABLE</label>
+						          <label for="frm_nom_usuario">NOMBRE USUARIO</label>
 						          <div id="d_frm_nom_usuario"></div>
 						        </div>
 						      </div>
