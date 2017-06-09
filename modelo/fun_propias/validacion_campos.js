@@ -184,6 +184,7 @@ function blanco(e){
 	if (valor=="") {
 		document.getElementById(etiqueta).innerHTML='';
 		document.getElementById(etiqueta).innerHTML='Este Campo es requerido';
+		control.focus();
 	}else{
 		document.getElementById(etiqueta).innerHTML='';
 	}
