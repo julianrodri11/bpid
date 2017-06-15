@@ -1,12 +1,9 @@
 // JavaScript Document
+//Desarollado ING dario santacruz
 
-<!------------------------------>
-function cargar_grilla_proyectos(campo){
+function cargar_grilla_proyectos(campo)
 {
-   //nombre del campo select
-   var lista_valores=document.getElementById(campo);
-   var div=document.getElementById("d_"+campo)
-   div.innerHTML='<img src="../../vistas/css/ajax-loader.gif" width="20" height="20">' 
+	
    value=1
    jQuery.ajax({		 
             type: "POST",
@@ -17,9 +14,10 @@ function cargar_grilla_proyectos(campo){
             	alert(respuesta)
 				if(respuesta!=-1){
 					var vector_valores = respuesta.split(";");
+				
 					for (x=0;x<vector_valores.length;x++){
     					 var objetos = vector_valores[x].split(",");
-						 lista_valores.options.add(new Option(objetos[1],objetos[0]));
+						 document.getElementById('frm_proyecto').options.add(new Option(objetos[1],objetos[0]));
 					}
 					div.innerHTML=""
 				}
@@ -34,9 +32,9 @@ function cargar_grilla_proyectos(campo){
 			}
         });
 			
-	}
+	
 }
-<!------------------------------>
+//
 function cargar_grilla_departamentos(campo){
 {
    //nombre del campo select

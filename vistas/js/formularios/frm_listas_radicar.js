@@ -4,6 +4,7 @@
 $(document).ready(function() {
     $('.modal').modal();
     $('select').material_select();
+
     $("#d_error").dialog({
 						autoOpen: false,
 						modal: true,
@@ -27,6 +28,8 @@ $(document).ready(function() {
 //FUNCION PARA CARGAR LA GRILLA DE LOS PROYECTOS
 function cargar_grillas_formulario(campos){
 	///var elem = campos.split('-');
-	cargar_grilla_proyectos(campos)
-	
+	//cargar_grilla_proyectos(campos);
+	  document.getElementById('frm_proyecto').options.add(new Option("3","dario"));
+	   $("#select" + 1).material_select();
+	   
 }

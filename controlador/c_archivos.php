@@ -68,7 +68,7 @@ if($correcto==1)
 if($correcto==1)
 {
 	$conexion->commit();
-	echo "EL NUMERO BPID ASIGNADO ES".$numero_bpid;
+	echo "EL NUMERO BPID ASIGNADO ES : ".$numero_bpid;
 }
 if($correcto==2)
 {

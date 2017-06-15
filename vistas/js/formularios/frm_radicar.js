@@ -78,7 +78,7 @@ function archivo_xml()
 										processData:false,
 										success: function(existe)
 										{
-											alert(existe)
+											//alert(existe)
 									if(existe==0)//si el archivo existe
 									{
 
