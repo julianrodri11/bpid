@@ -14,6 +14,16 @@ $(document).ready(function() {
 											  }
 								}
 						});
+     $("#d_ingreso").dialog({
+						autoOpen: false,
+						modal: true,
+						buttons: {
+						"Aceptar": function () {
+						$(this).dialog("close");
+						window.self.location="../formularios/frm_radicar.php";
+											  }
+								}
+						});
 });
 /*
 FUNCION QUE DESPUES DE HACER CLICK EN EL BOTON ENVIAR SE ABRE EL DIALOG
@@ -50,43 +60,74 @@ function archivo_xml()
 	var formData=new FormData($("#frm_radicar")[0]);  
  	var nombre_archivo=document.getElementById('frm_archivo').value;
  	var extension = (nombre_archivo.substring(nombre_archivo.lastIndexOf("."))).toLowerCase();
- 
-    if (extension=='.xml') { 
-				   	 	$.ajax({
-						 url:'../../modelo/consultas/consultar_basico_xml.php',
-						type: "POST",
-						data: formData,
-						contentType:false,
-						processData:false,
-						success: function(datos)
-						{
-						
-						var cadena=datos.split("/");
-						nombre_proyecto.focus();
-						nombre_proyecto.value=cadena[0];
-						numero_proyecto.focus();
-						numero_proyecto.value=cadena[8];
-						sector.focus();
-						sector.value=cadena[1];
-						localizacion.focus();
-						localizacion.value=cadena[2];
-						eje.focus();
-						eje.value=cadena[3];
-						programa.focus();
-						programa.value=cadena[4];
-						subprograma.focus();
-						subprograma.value=cadena[5];
-						valor.focus();
-						valor.value=cadena[7];
-						}
-						});	
-						}
-	else
-	{
-		alert("EL ARCHIVO DEBE TENER EXTENCION XML");
-		return false;
-	}						
-								
+ 	if (extension!='.xml') { 
+					document.getElementById('d_error').innerHTML='<p>EL ARCHIVO DEBE TENER EXTENCION XML<p>';
+					$("#d_error").dialog("open");
+					//alert("DEBE SELECCIONAR UN ARCHIVO XML ANTES");
+					return false;
+					nombre_archivo.focus();
+ 	}
+ 	else
+ 	{
+ 	var formData=new FormData($("#frm_radicar")[0]);  //lo hago por la validacion
+										$.ajax({
+						  url:'../../modelo/consultas/consultar_existencia_xml.php',
+										type: "POST",
+										data: formData,
+										contentType:false,
+										processData:false,
+										success: function(existe)
+										{
+											alert(existe)
+									if(existe==0)//si el archivo existe
+									{
+
+											$.ajax({
+													 url:'../../modelo/consultas/consultar_basico_xml.php',
+													type: "POST",
+													data: formData,
+													contentType:false,
+													processData:false,
+													success: function(datos)
+													{
+													var cadena=datos.split("/");
+													nombre_proyecto.focus();
+													nombre_proyecto.value=cadena[0];
+													numero_proyecto.focus();
+													numero_proyecto.value=cadena[8];
+													sector.focus();
+													sector.value=cadena[1];
+													localizacion.focus();
+													localizacion.value=cadena[2];
+													eje.focus();
+													eje.value=cadena[3];
+													programa.focus();
+													programa.value=cadena[4];
+													subprograma.focus();
+													subprograma.value=cadena[5];
+													valor.focus();
+													valor.value=cadena[7];
+													}
+													});	
+
+
+
+									}
+									else
+									{
+						$('#modal1').modal('close');							
+						document.getElementById('d_ingreso').innerHTML='<p> EL ARCHIVO YA SE ENCUENTRA RADICADO!, SELECCIONE UNO NUEVO</p>';
+						$("#d_ingreso").dialog("open");
+						return false;
+
+									}
+			 
+
+							
+										}
+										});		
+    	
+		}						
 }
 
 function Borrar() {
@@ -136,7 +177,7 @@ function almacenar()
 			async: false,
 			data:{value:value},
             success:function(respuesta){
-				alert(respuesta)
+				//alert(respuesta)
 				
 			if(respuesta==1){ 
 			
@@ -149,14 +190,19 @@ function almacenar()
 										processData:false,
 										success: function(datos)
 										{
-										alert(datos);
-							 window.self.location="../formularios/frm_consulta_subasta_crear.php";
+										//alert(datos);
+			 $('#modal1').modal('close');							
+			document.getElementById('d_ingreso').innerHTML='<p>'+ datos + '</p>';
+			$("#d_ingreso").dialog("open");
+
+							 //window.self.location="../formularios/frm_radicar.php";
 										}
 										});			
-			//
+			
 			
 			}
-			
+			else
+			{
 			if(respuesta==0){var mensaje="ERROR, INTENTELO NUEVAMENTE"}
 			if(respuesta==2){var mensaje="ERROR,HAY DATOS EN BLANCO QUE DEBEN REGISTRARSE"}
 			if(respuesta==3){var mensaje="ERROR,EL CORREO ELECTRONICO ES INCORRECTO"}
@@ -164,7 +210,8 @@ function almacenar()
 			if(respuesta==5){var mensaje="ERROR,LOS DATOS DE RADICACION NO FUERON INGRESADOS"}
 			document.getElementById('d_error').innerHTML='<p>'+ mensaje + '</p>';
 			$("#d_error").dialog("open");
-
+			return false;
+			}
 										},
 										
             error: function () {

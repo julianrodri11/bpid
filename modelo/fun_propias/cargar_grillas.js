@@ -1,72 +1,20 @@
 // JavaScript Document
+
 <!------------------------------>
-//Funcion que calcula año en el formulario para contrato
-function fecha(campo){
- var lista_valores=document.getElementById(campo); 
- var fecha = new Date();
- var ano = fecha.getFullYear();
- for(var i=1;i<=5;i=i+1){
-	 	lista_valores.options.add(new Option(ano,ano));
-		ano=ano-1;
- }
-}
-//funcion para calcular horas
-function hora(campo){
- var lista_valores=document.getElementById(campo); 
-  for(var i=1;i<=12;i=i+1){
-	 	lista_valores.options.add(new Option(i,i));
-		
- }
-}
-//funcion para calcular horas
-function minutos(campo){
- var lista_valores=document.getElementById(campo); 
-  for(var i=0;i<=60;i=i+1){
-	 	lista_valores.options.add(new Option(i,i));
-		
- }
-}
-<!------------------------------>
-//funcion que calcula el numero del formulario para ingreso
-function numero_formulario(){
-	cod_formulario=document.getElementById('frm_cod_formulario')
-	valor_enviar=1;
-	var value =valor_enviar;		
-    	 jQuery.ajax({		 
-            type: "POST",
-            url:'../clases/verificar/verificaciones_generales.php',
-			async: false,
-			data:{value:value},
-            success:function(respuesta){
-			  valor=parseInt(respuesta)
-			  if(valor==-1 || valor==0){
-				alert("Error en tiempo de Ejecucion, Reportar Error al Administrador");
-				//window.top.location ="../index.php";
-			  }else{
-				cod_formulario.value="";
-				cod_formulario.value=valor
-			  }
-			},
-           error: function () {
-		      alert("Error inesperado")
-			  window.top.location ="../index.php";	
-			}
-        });
-}
-<!------------------------------>
-function cargar_grilla_objetos_contratar(campo){
+function cargar_grilla_proyectos(campo){
 {
    //nombre del campo select
-      var lista_valores=document.getElementById(campo);
+   var lista_valores=document.getElementById(campo);
    var div=document.getElementById("d_"+campo)
-   div.innerHTML='<img src="../css/ajax-loader.gif" width="20" height="20">' 
+   div.innerHTML='<img src="../../vistas/css/ajax-loader.gif" width="20" height="20">' 
    value=1
    jQuery.ajax({		 
             type: "POST",
-            url:'../cargar/cargar_grillas.php',
+            url:'../../modelo/consultas/cargar_grillas.php',
 			async: false,
 			data:{value:value},
             success:function(respuesta){
+            	alert(respuesta)
 				if(respuesta!=-1){
 					var vector_valores = respuesta.split(";");
 					for (x=0;x<vector_valores.length;x++){
