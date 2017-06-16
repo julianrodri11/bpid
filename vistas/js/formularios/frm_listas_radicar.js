@@ -29,7 +29,7 @@ $(document).ready(function() {
 function cargar_grillas_formulario(campos){
 	///var elem = campos.split('-');
 	//cargar_grilla_proyectos(campos);
-	  document.getElementById('frm_proyecto').options.add(new Option("3","dario"));
-	   $("#select" + 1).material_select();
-	   
+	 
+	   $('#miMenuDesplegable').append("<option value='op1' selected='selected'>Código de ejemplo Append 1</option>");
+
 }
