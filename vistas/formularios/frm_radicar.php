@@ -44,7 +44,7 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="row">
 						<div class="col s12 m2 l2"><div class="etiquetafrm"><div class="textofrm">NOMBRE PROYECTO</div></div></div>
 						<div class="col s12 m10 l10">
@@ -52,10 +52,10 @@
 								<div class="opcionesbtn">
 									<div class="input-field col s12 m12 l12">
 									<textarea class="materialize-textarea" id="frm_nom_proyecto" name="frm_nom_proyecto">
-									
+
 									</textarea>
           								<label for="textarea1">Nombre Proyecto</label>
-										
+
 										<div class="descripcion"></div>
 									</div>
 								</div>
@@ -104,7 +104,7 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="row">
 						<div class="col s12 m2 l2"><div class="etiquetafrm"><div class="textofrm">VALOR</div></div></div>
 						<div class="col s12 m10 l10">
@@ -162,7 +162,7 @@
 								</div>
 							</div>
 						</div>
-					
+
 					<div class="row">
 						<div class="col s2 m2 l2"></div>
 						<div class="col s8 m8 l12 center-align">
@@ -170,7 +170,7 @@
 							<button class="btn waves-effect waves-light" onclick="validar()">Enviar
 								<i class="material-icons right">send</i>
 							</button>
-							
+
 							<button class="btn waves-effect waves-light" onclick="Borrar()">Borrar
 								<i class="material-icons right">send</i>
 							</button>
@@ -212,7 +212,7 @@
          							  <div id="d_frm_entidad_ejecuta"></div>
 							        </div>
 							      </div>
-						
+
 								<br>
 						      <div class="row">
 						      <h6>RESPONSABLE DEL PROYECTO</h6>
@@ -246,7 +246,7 @@
 						      <div class="row">
 						      <br>
 						        <div class="input-field col s6">
-						          <input  id="frm_tel_responsable" name="frm_tel_responsable" type="text" class="validate" 
+						          <input  id="frm_tel_responsable" name="frm_tel_responsable" type="text" class="validate"
 						          onKeyPress="return solonum(event)" >
 						          <label for="frm_tel_responsable">TELEFONO/FAX</label>
 						          <div id="d_frm_tel_responsable"></div>
@@ -294,15 +294,15 @@
 							        </div>
 							    </div>
 								</div>
-								
+
 								<div class="modal-footer">
 								<a href="#!"  onClick="if(validar_campos_requeridos('frm_poai-frm_entidad-frm_entidad_ejecuta-frm_id_responsable-frm_nom_responsable-frm_cargo_responsable-frm_dir_responsable-frm_cel_responsable-frm_correo-frm_id_usuario-frm_nom_usuario',11)==true)almacenar()" class="modal-action  waves-effect waves-green btn-flat ">Guardar</a>
 								<a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat ">Cancelar</a>
 
 								</div>
 							</div>
-							
-							 
+
+
 						</div>
 
 					</div>
@@ -311,7 +311,7 @@
 				</div-->
 			</div>
 		</div>
-	
+
 
 </div></div></form>
 
