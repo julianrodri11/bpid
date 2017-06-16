@@ -76,7 +76,7 @@
 				<div id="botones">
 				<form method="post" action="controlador/c_login.php">
 					<label>Usuario</label><br>
-					<input class="btnslogin" type="email" name="txt_correo" value="julianrodri11@gmail.com"><br>
+					<input class="btnslogin" type="text" name="txt_correo" value="julianrodri11@gmail.com"><br>
 					<label>Contraseña</label><br>
 					<input class="btnslogin" type="password" name="txt_contrasena" value="123"><br><br>
 					<input type="submit" id="btnenviar" value="Iniciar sesión">
@@ -90,8 +90,8 @@
 			<div id="imglogo"></div>
 
 		</div>
-		
+
 	</div>
-	
+
 	</body>
 </html>
