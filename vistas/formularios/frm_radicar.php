@@ -11,9 +11,8 @@
 </head>
 
 <body>
-<div id="d_error" title="ALERTA">
-
-</div>
+<div id="d_error" title="ALERTA"></div>
+<div id="d_ingreso" title="INFORMACION"></div>
 <?php require_once '../menu.php';?>
 <form id='frm_radicar' name='frm_radicar' onSubmit="return false"  enctype="multipart/form-data">
 <div class="col s12 m11 l9">
@@ -198,7 +197,8 @@
 							      </div>
 									<div class="row">
         							<div class="input-field col s12">
-							         <input  id="frm_entidad" name="frm_entidad" type="text" class="validate">
+							         <input  id="frm_entidad" name="frm_entidad" type="text" class="validate"
+							          onKeyPress="return sololet(event)">
          							 <label for="frm_entidad" id="lbl_frm_entidad">ENTIDAD PROPONENTE</label>
          							 <div id="d_frm_entidad"></div>
 							        </div>
@@ -206,7 +206,8 @@
 							      <BR>
 							      <div class="row">
         							<div class="input-field col s12">
-							       <input  id="frm_entidad_ejecuta" name="frm_entidad_ejecuta" type="text" class="validate">
+							       <input  id="frm_entidad_ejecuta" name="frm_entidad_ejecuta" type="text" class="validate"
+							        onKeyPress="return sololet(event)">
          							 <label for="frm_entidad_ejecuta" id="lbl_">ENTIDAD EJECUTANTE</label>
          							  <div id="d_frm_entidad_ejecuta"></div>
 							        </div>
@@ -222,7 +223,8 @@
 						           <div id="d_frm_id_responsable"></div>
 						        </div>
 						        <div class="input-field col s6">
-						          <input id="frm_nom_responsable" name="frm_nom_responsable" type="text" class="validate">
+						          <input id="frm_nom_responsable" name="frm_nom_responsable" type="text" class="validate"
+						          onKeyPress="return sololet(event)" >
 						          <label for="frm_nom_responsable">NOMBRE RESPONSABLE</label>
 						          <div id="d_frm_nom_responsable"></div>
 						        </div>
@@ -230,7 +232,8 @@
 						      <div class="row">
 						      <br>
 						        <div class="input-field col s6">
-						          <input  id="frm_cargo_responsable" name="frm_cargo_responsable" type="text" class="validate">
+						          <input  id="frm_cargo_responsable" name="frm_cargo_responsable" type="text" class="validate"
+						          onKeyPress="return sololet(event)">
 						          <label for="frm_cargo_responsable">CARGO</label>
 						          <div id="d_frm_cargo_responsable"></div>
 						        </div>
@@ -267,12 +270,14 @@
 							      <div class="row">
 						      <h6>DATOS PERSONA QUE ENTREGA EL PROYECTO</h6>
 						        <div class="input-field col s6">
-						          <input  id="frm_id_usuario" name="frm_id_usuario" type="text" class="validate">
+						          <input  id="frm_id_usuario" name="frm_id_usuario" type="text" class="validate"
+						          onKeyPress="return solonum(event)">
 						          <label for="frm_id_usuario">No IDENTIFICACION</label>
 						           <div id="d_frm_id_usuario"></div>
 						        </div>
 						        <div class="input-field col s6">
-						          <input id="frm_nom_usuario" name="frm_nom_usuario" type="text" class="validate">
+						          <input id="frm_nom_usuario" name="frm_nom_usuario" type="text" class="validate"
+						           onKeyPress="return sololet(event)">
 						          <label for="frm_nom_usuario">NOMBRE USUARIO</label>
 						          <div id="d_frm_nom_usuario"></div>
 						        </div>
@@ -283,15 +288,17 @@
         							<div class="input-field col s12">
 							       <textarea class="materialize-textarea" id="frm_observaciones" name="frm_observaciones">
 									</textarea>
+									<input id="frm_num_programa" name="frm_num_programa" type="hidden" value="000">
          							 <label for="frm_observaciones">OBSERVACIONES</label>
          							 <div id="d_frm_observaciones"></div>
 							        </div>
 							    </div>
 								</div>
-
+								
 								<div class="modal-footer">
 								<a href="#!"  onClick="if(validar_campos_requeridos('frm_poai-frm_entidad-frm_entidad_ejecuta-frm_id_responsable-frm_nom_responsable-frm_cargo_responsable-frm_dir_responsable-frm_cel_responsable-frm_correo-frm_id_usuario-frm_nom_usuario',11)==true)almacenar()" class="modal-action  waves-effect waves-green btn-flat ">Guardar</a>
 								<a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat ">Cancelar</a>
+
 								</div>
 							</div>
 							
@@ -304,7 +311,7 @@
 				</div-->
 			</div>
 		</div>
-
+	
 
 </div></div></form>
 

@@ -29,6 +29,7 @@ class m_radicar
    var $fecha_envio;
    var $hora_envio;
    var $cod_activacion;
+   var $cod_secretaria;
 
 function m_radicar()
    {
@@ -59,13 +60,14 @@ function m_radicar()
    $this-> fecha_envio=trim($_POST["fecha_envio"]);
    $this-> hora_envio=trim($_POST["hora_envio"]);
    $this-> cod_activacion=trim($_POST["cod_activacion"]);
+   $this-> cod_secretaria=trim($_POST["cod_secretaria"]);
    
    } 
    function ingresar_radicar()
    {
 $sql="INSERT INTO radicacion(cod_radicacion,cod_bpid,num_proyecto,sector,localizacion,valor,programa,subprograma,poai,entidad_proponente,entidad_ejecutante,
    num_id_responsable,nom_responsable,cargo_responsable,direccion_responsable,telefono_responsable,cel_responsable,correo_responsable,id_usuario,
-   nombre_usuario,observaciones,cod_usuario_ingreso,fecha_envio,hora_envio,cod_activacion,nombre_proyecto,eje)
+   nombre_usuario,observaciones,cod_usuario_ingreso,fecha_envio,hora_envio,cod_activacion,nombre_proyecto,eje,cod_secretaria)
 VALUES('"
       .$this->cod_ingreso_radicar      ."','"
       .$this->cod_numero_bpid          ."','"
@@ -93,7 +95,8 @@ VALUES('"
       .$this->hora_envio               ."','"
       .$this->cod_activacion           ."','"
       .$this->nombre_proyecto          ."','"
-      .$this->eje                      ."')";
+      .$this->eje                      ."','"
+      .$this->cod_secretaria           ."')";
       return $sql;
    }
 }

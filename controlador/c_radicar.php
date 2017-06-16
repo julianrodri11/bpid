@@ -119,6 +119,7 @@ if($correcto==1){
 	$radicar->fecha_envio=$fecha_envio;
 	$radicar->hora_envio=$hora_envio;
 	$radicar->cod_activacion=1;
+	$radicar->cod_secretaria=1;//temporal debo traerla del inicio de sesios
 			
 			$sql = $radicar->ingresar_radicar();
 			$insertar=$manejador->consulta(2,$sql); 
@@ -171,27 +172,27 @@ return $numero."/*".$banco;
 if($correcto==1)
 {
 	$conexion->commit();
-	echo "ingreso Correcto";
+	//echo "ingreso Correcto";
 }
 if($correcto==2)
 {
 	$conexion->rollBack();
-	echo "ERROR,HAY DATOS EN BLANCO QUE DEBEN REGISTRARSE";
+	//echo "ERROR,HAY DATOS EN BLANCO QUE DEBEN REGISTRARSE";
 }
 if($correcto==3)
 {
 	$conexion->rollBack();
-	echo "ERROR,EL CORREO ELECTRONICO ES INCORRECTO";
+	//echo "ERROR,EL CORREO ELECTRONICO ES INCORRECTO";
 }
 if($correcto==4)
 {
 	$conexion->rollBack();
-	echo "ERROR,LOS DATOS DEL PROYECTO NO FUERON INGRESADOS";
+	//echo "ERROR,LOS DATOS DEL PROYECTO NO FUERON INGRESADOS";
 }
 if($correcto==5)
 {
 	$conexion->rollBack();
-	echo "ERROR,LOS DATOS DE RADICACION NO FUERON INGRESADOS";
+	//echo "ERROR,LOS DATOS DE RADICACION NO FUERON INGRESADOS";
 }
 echo $correcto;
 ?>
