@@ -20,7 +20,24 @@
 			<div class="bajar">
 				<div class="container-fluid">
 					<div class="row">
-						<div class="col s12 m12 l12 center-align"><div class="titulofrm"> LISTAS DE CHEQUEO GENERAL</div></div>
+						<div class="col s12 m10 l10">
+							<div class="row">
+								<div class="input-field col s12 m12 l12">
+									 <table class="bordered">
+				        <thead>
+				          <tr>
+				           <th colspan="2">
+    					<div align="left" style="float:left">SUBASTA:: GENERAR CERTIFICADOS</div>
+				         </tr>
+				         <tr>
+				         <th>Item Name</th>
+				              <th>Item Price</th>
+				         </tr>     
+				        </thead>
+     				 </table>
+								</div>
+							</div>
+						</div>
 					</div>
 					
 					
