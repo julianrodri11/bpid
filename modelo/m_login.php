@@ -24,8 +24,8 @@ class m_login
         // VERIFICA SI EL RESULTADO ES DIFERENTE DE VACIO QUIERE DECIR QUE EL CORREO SI EXISTE Y ESTA ACTIVO
         if ($resultados != '') {
             session_start();
-            $_SESSION['estado']       = $resultados['estado'];
-            echo $_SESSION['usuario'] = sha1($resultados['correo']);
+            $_SESSION['estado']  = $resultados['estado'];
+            $_SESSION['usuario'] = $resultados['correo'];
             return 1;
 
             // $_SESSION['identificacion'] = $dato['numeroid'];
