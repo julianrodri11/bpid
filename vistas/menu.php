@@ -93,7 +93,7 @@ if (!isset($_SESSION['usuario'])) {
 				<label id="nombresesionsup" >
 					<?php
 echo strtoupper($_SESSION['usuario']); ?>
-					<a href="../controlador/cerrar.php">CERRAR SESIÓN
+					<a href="../../controlador/cerrar.php">CERRAR SESIÓN
 
 				</label>
 				<label id="fechasupederecha">
