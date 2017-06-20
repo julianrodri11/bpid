@@ -46,7 +46,10 @@
 
 .lab{
     
-    
+    position: relative;
+    font-family: Gill Sans MT;
+    text-align: left;
+    font-size: 13px;
     
 }
 
