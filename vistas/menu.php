@@ -107,6 +107,16 @@ echo strtoupper($_SESSION['usuario']); ?>
 			<div class="nav-wrapper light-green darken-2">
 				<a href="#!" data-activates="mobile-demo">Mostrar Menú</a>
 
+<<<<<<< HEAD
+			<a href="#" class="brand-logo right"><i class="material-icons">settings</i></a>
+			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+
+			<ul class="side-nav" id="mobile-demo">
+				<div class="menuizquierda">
+					<!--menu oculto cuando la pantalla se hace pequeña-->
+					<ul id="ulizquierdo">
+						<li class="opciones"><div class="imgul" onclick="ocultarMenu(1.11)">INICIO</div></li>
+=======
 				<a href="#" class="brand-logo right"><i class="material-icons">settings</i></a>
 				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 				<ul class="side-nav" id="mobile-demo">
@@ -114,6 +124,7 @@ echo strtoupper($_SESSION['usuario']); ?>
 						<!--menu oculto cuando la pantalla se hace pequeña-->
 						<ul id="ulizquierdo">
 							<li class="opciones"><div class="imgul" onclick="ocultarMenu(1.11)">INICIO</div></li>
+>>>>>>> b13880babf63485408d78cc9236782a5bab002f8
 						<!--
 						<div id="inicioOculto">
 							<li class="opciones opcionesli" onclick="ocultarMenu(1.11)"><div class="imgul">REGISTRAR</div></li>
