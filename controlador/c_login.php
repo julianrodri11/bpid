@@ -23,7 +23,8 @@ if (isset($_POST['txt_correo']) and isset($_POST['txt_contrasena'])) {
         if ($mensaje == 1) {
             header('location:../vistas/index.php');
         }if ($mensaje == 2) {
-            echo "Error, Verifique su usuario o contraseña, vuelve a intentarlo";
+            echo "<script> alert('Error, Verifique su usuario o contraseña, vuelve a intentarlo')</script>";
+            echo "<a href='../index.php'>Inicio</a>";
         }
 
     } else {

@@ -4,20 +4,20 @@ class m_login
 {
 
     /*
-    FUNCION QUE SIRVE PARA INICIAR SESION
+     *FUNCION QUE SIRVE PARA INICIAR SESION
      */
     public function iniciarSesion($correo, $contrasena)
     {
-        echo "<h1>$correo -- $contrasena</h1>";
+        //echo "<h1>$correo -- $contrasena</h1>";
         // header('Location: ../vistas/index.php');
+
         #ENCRIPTO LA CONTRASEÑA CON SHA1 ANTES DE ENVIARLA A LA BASE DE DATOS
         $contrasena = sha1($contrasena);
         #LLAMO LA CONEXION PARA PODER CONSULTAR A LA BASE DE DATOS
         $modelo   = new Conexion_PDO();
         $conexion = $modelo->get_conexion();
         #PREPARO LA SQL PARA VERIFICAR SI EL USUARIO EXISTE Y ESTA ACTIVO
-        $sql = "SELECT correo,contrasena,estado FROM login WHERE correo='$correo' AND contrasena='$contrasena' AND estado='ACTIVO'";
-        echo "$sql";
+        $sql       = "SELECT correo,contrasena,estado FROM login WHERE correo='$correo' AND contrasena='$contrasena' AND estado='ACTIVO'";
         $statement = $conexion->prepare($sql);
         $statement->execute();
         $resultados = $statement->fetch();
@@ -27,15 +27,16 @@ class m_login
             $_SESSION['estado']  = $resultados['estado'];
             $_SESSION['usuario'] = $resultados['correo'];
             return 1;
-            /*$_SESSION['identificacion'] = $dato['numeroid'];
-        $_SESSION['nombre']         = $dato['nombre1'];
-        $_SESSION['apellido']       = $dato['apellido1'];
-        header('location:acceso.php'); */
+
+            // $_SESSION['identificacion'] = $dato['numeroid'];
+            // $_SESSION['nombre']         = $dato['nombre1'];
+            // $_SESSION['apellido']       = $dato['apellido1'];
+            // header('location:acceso.php');
 
         } else {
             return 2;
-            /*echo "Error, verifica tu usuario y contraseña";
-        header('location:../index.php');*/
+            // echo "Error, verifica tu usuario y contraseña";
+            // header('location:../index.php');
         }
 
     }
