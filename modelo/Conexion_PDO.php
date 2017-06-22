@@ -6,8 +6,8 @@ class Conexion_PDO
   {
     $motor = "pgsql";
     $user  = "postgres";
-    $pass  = "123456";
-    $host  = "localhost";
+    $pass  = "bpid2017";
+    $host  = "181.225.96.71";
     $db    = "bpid";
 
     try {
