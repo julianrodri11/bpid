@@ -27,6 +27,7 @@ function buscarViabilidades(){
 function mas(cod){
     
     document.getElementById("mas").style.display = "block";
+    document.body.style.overflow = "hidden";
     
     document.getElementById("numero").innerHTML = cod;
     
@@ -35,5 +36,6 @@ function mas(cod){
 function cerrarFrmExterno(id){
     
     document.getElementById(id).style.display = "none";
+    document.body.style.overflow = "scroll";
     
 }

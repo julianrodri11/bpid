@@ -97,11 +97,9 @@
     <div id="d_error" title="ALERTA"></div>
     <div id="d_ingreso" title="INFORMACION"></div>
     <?php require_once '../menu.php';?>
-    <form id='frm_radicar' name='frm_viabilidad' onSubmit="return false"  enctype="multipart/form-data">
+    <form id='frm_viabilidad' name='frm_viabilidad' onSubmit="return false"  enctype="multipart/form-data">
         
         <!-- --------------------------------------------- -->
-        
-        <>
         
         <div class="col s12 m11 l9">
             <div class="bajar">
