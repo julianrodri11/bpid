@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['usuario'])) {
+  header('location:http://localhost/bpid/');
+} else {
+  //  echo "Existe una sesion";
+
+  ?>
 <script type="text/javascript">
 	/*
 		*activador para menu
@@ -80,27 +88,35 @@
 
 	</script>
 	<div class="container-fluid">
-	<div class="row ">
-		<div class="col s12 m12 l12 barra" >
-			<label id="nombresesionsup" >JULIAN RODRIGUEZ</label>
-			<label id="fechasupederecha">
-				<?php date_default_timezone_set("America/Bogota");
-$time = time();
-echo date("D d - M m - Y H:i:s:A", $time);?>
-			</label></div>
+		<div class="row ">
+			<div class="col s12 m12 l12 barra" >
+				<label id="nombresesionsup" >
+					<?php
+echo strtoupper($_SESSION['usuario']); ?>
+					<a href="../../controlador/cerrar.php">CERRAR SESIÓN
+
+				</label>
+				<label id="fechasupederecha">
+					<?php date_default_timezone_set("America/Bogota");
+  $time = time();
+  echo date("D d - M m - Y H:i:s:A", $time);?>
+				</label></div>
+			</div>
 		</div>
-	</div>
-	<nav class="hide-on-large-only">
-		<div class="nav-wrapper light-green darken-2">
-			<a href="#!" data-activates="mobile-demo">Mostrar Menú</a>
+		<nav class="hide-on-large-only">
+			<div class="nav-wrapper light-green darken-2">
+				<a href="#!" data-activates="mobile-demo">Mostrar Menú</a>
+
 
 			<a href="#" class="brand-logo right"><i class="material-icons">settings</i></a>
 			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+
 			<ul class="side-nav" id="mobile-demo">
 				<div class="menuizquierda">
 					<!--menu oculto cuando la pantalla se hace pequeña-->
 					<ul id="ulizquierdo">
 						<li class="opciones"><div class="imgul" onclick="ocultarMenu(1.11)">INICIO</div></li>
+
 						<!--
 						<div id="inicioOculto">
 							<li class="opciones opcionesli" onclick="ocultarMenu(1.11)"><div class="imgul">REGISTRAR</div></li>
@@ -108,99 +124,101 @@ echo date("D d - M m - Y H:i:s:A", $time);?>
 							<li class="opciones opcionesli" onclick="ocultarMenu(1.33)"><div class="imgul">BUSCAR</div></li>
 						</div>
 					-->
-						<li class="opciones"><div class="imgul" onclick="mostrarMenu('2oculto')">RADICACIÓN</div></li>
-						<div id="radicacionOculto">
-							<li class="opciones opcionesli" onclick="ocultarMenu(2.11)"><div class="imgul">REGISTRAR</div></li>
-							<li class="opciones opcionesli" onclick="ocultarMenu(2.22)"><div class="imgul">LISTA DE CHEQUEO</div></li>
-							<li class="opciones opcionesli" onclick="ocultarMenu(2.33)"><div class="imgul">BUSCAR</div></li>
-						</div>
-						<li class="opciones"><div class="imgul" onclick="mostrarMenu('3oculto')">VIABILIDAD</div></li>
-						<div id="viabilidadOculto">
-							<li class="opciones opcionesli" onclick="ocultarMenu(3.11)"><div class="imgul">REGISTRAR</div></li>
-							<li class="opciones opcionesli" onclick="ocultarMenu(3.22)"><div class="imgul">ACTUALIZAR</div></li>
-							<li class="opciones opcionesli" onclick="ocultarMenu(3.33)"><div class="imgul">BUSCAR</div></li>
-						</div>
-						<li class="opciones"><div class="imgul" onclick="mostrarMenu('4oculto')">CONTROL POSTERIOR V.</div></li>
-						<div id="controlposteriorOculto">
-							<li class="opciones opcionesli" onclick="ocultarMenu(4.11)"><div class="imgul">REGISTRAR</div></li>
-							<li class="opciones opcionesli" onclick="ocultarMenu(4.22)"><div class="imgul">ACTUALIZAR</div></li>
-							<li class="opciones opcionesli" onclick="ocultarMenu(4.33)"><div class="imgul">BUSCAR</div></li>
-						</div>
-						<li class="opciones"><div class="imgul" onclick="mostrarMenu('5oculto')">ACTUALIZACIÓN</div></li>
-						<div id="actualizacionOculto">
-							<li class="opciones opcionesli" onclick="ocultarMenu(5.11)"><div class="imgul">REGISTRAR</div></li>
-							<li class="opciones opcionesli" onclick="ocultarMenu(5.22)"><div class="imgul">ACTUALIZAR</div></li>
-							<li class="opciones opcionesli" onclick="ocultarMenu(5.33)"><div class="imgul">BUSCAR</div></li>
-						</div>
-						<li class="opciones"><div class="imgul" onclick="mostrarMenu('6oculto')">EJECUCIÓN</div></li>
-						<div id="ejecucionOculto">
-							<li class="opciones opcionesli" onclick="ocultarMenu(6.11)"><div class="imgul">REGISTRAR</div></li>
-							<li class="opciones opcionesli" onclick="ocultarMenu(6.22)"><div class="imgul">ACTUALIZAR</div></li>
-							<li class="opciones opcionesli" onclick="ocultarMenu(6.33)"><div class="imgul">BUSCAR</div></li>
-						</div>
-						<li class="opciones"><div class="imgul" onclick="mostrarMenu('7oculto')">CONSULTAS PROYECTOS</div></li>
-						<div id="consultasOculto">
-							<li class="opciones opcionesli" onclick="ocultarMenu(7.11)"><div class="imgul">REGISTRAR</div></li>
-							<li class="opciones opcionesli" onclick="ocultarMenu(7.22)"><div class="imgul">ACTUALIZAR</div></li>
-							<li class="opciones opcionesli" onclick="ocultarMenu(7.33)"><div class="imgul">BUSCAR</div></li>
-						</div>
-						<li class=""><div class="imgusuario"><div id="nombresesion">JULIAN RODRIGUEZ</div></div></li>
-					</ul>
-				</div>
-			</ul>
-		</div>
-	</nav>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col s12 m2 l2 hide-on-med-and-down">
-				<div class="menuizquierda">
-					<ul id="ulizquierdo">
-						<li class="opciones"><div class="imgul" onclick="ocultarMenu(1.1)">INICIO</div></li>
+					<li class="opciones"><div class="imgul" onclick="mostrarMenu('2oculto')">RADICACIÓN</div></li>
+					<div id="radicacionOculto">
+						<li class="opciones opcionesli" onclick="ocultarMenu(2.11)"><div class="imgul">REGISTRAR</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(2.22)"><div class="imgul">LISTA DE CHEQUEO</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(2.33)"><div class="imgul">BUSCAR</div></li>
+					</div>
+					<li class="opciones"><div class="imgul" onclick="mostrarMenu('3oculto')">VIABILIDAD</div></li>
+					<div id="viabilidadOculto">
+						<li class="opciones opcionesli" onclick="ocultarMenu(3.11)"><div class="imgul">REGISTRAR</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(3.22)"><div class="imgul">ACTUALIZAR</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(3.33)"><div class="imgul">BUSCAR</div></li>
+					</div>
+					<li class="opciones"><div class="imgul" onclick="mostrarMenu('4oculto')">CONTROL POSTERIOR V.</div></li>
+					<div id="controlposteriorOculto">
+						<li class="opciones opcionesli" onclick="ocultarMenu(4.11)"><div class="imgul">REGISTRAR</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(4.22)"><div class="imgul">ACTUALIZAR</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(4.33)"><div class="imgul">BUSCAR</div></li>
+					</div>
+					<li class="opciones"><div class="imgul" onclick="mostrarMenu('5oculto')">ACTUALIZACIÓN</div></li>
+					<div id="actualizacionOculto">
+						<li class="opciones opcionesli" onclick="ocultarMenu(5.11)"><div class="imgul">REGISTRAR</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(5.22)"><div class="imgul">ACTUALIZAR</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(5.33)"><div class="imgul">BUSCAR</div></li>
+					</div>
+					<li class="opciones"><div class="imgul" onclick="mostrarMenu('6oculto')">EJECUCIÓN</div></li>
+					<div id="ejecucionOculto">
+						<li class="opciones opcionesli" onclick="ocultarMenu(6.11)"><div class="imgul">REGISTRAR</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(6.22)"><div class="imgul">ACTUALIZAR</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(6.33)"><div class="imgul">BUSCAR</div></li>
+					</div>
+					<li class="opciones"><div class="imgul" onclick="mostrarMenu('7oculto')">CONSULTAS PROYECTOS</div></li>
+					<div id="consultasOculto">
+						<li class="opciones opcionesli" onclick="ocultarMenu(7.11)"><div class="imgul">REGISTRAR</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(7.22)"><div class="imgul">ACTUALIZAR</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(7.33)"><div class="imgul">BUSCAR</div></li>
+					</div>
+					<li class=""><div class="imgusuario"><div id="nombresesion">JULIAN RODRIGUEZ</div></div></li>
+				</ul>
+			</div>
+		</ul>
+	</div>
+</nav>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col s12 m2 l2 hide-on-med-and-down">
+			<div class="menuizquierda">
+				<ul id="ulizquierdo">
+					<li class="opciones"><div class="imgul" onclick="ocultarMenu(1.1)">INICIO</div></li>
 					<!--
 						<div id="inicio">
 							<li class="opciones opcionesli" onclick="ocultarMenu(1.1)"><div class="imgul">REGISTRAR</div></li>
 							<li class="opciones opcionesli" onclick="ocultarMenu(1.2)"><div class="imgul">ACTUALIZAR</div></li>
 							<li class="opciones opcionesli" onclick="ocultarMenu(1.3)"><div class="imgul">BUSCAR</div></li>
 						</div>
-						-->
-						<li class="opciones"><div class="imgul" onclick="mostrarMenu(2)">RADICACIÓN</div></li>
-						<div id="radicacion">
-							<li class="opciones opcionesli" onclick="ocultarMenu(2.1)"><div class="imgul">REGISTRAR</div></li>
-							<li class="opciones opcionesli" onclick="ocultarMenu(2.2)"><div class="imgul">LISTA DE CHEQUEO</div></li>
-							<li class="opciones opcionesli" onclick="ocultarMenu(2.3)"><div class="imgul">BUSCAR</div></li>
-						</div>
-						<li class="opciones"><div class="imgul" onclick="mostrarMenu(3)">VIABILIDAD</div></li>
-						<div id="viabilidad">
-							<li class="opciones opcionesli" onclick="ocultarMenu(3.1)"><div class="imgul">REGISTRAR</div></li>
-							<li class="opciones opcionesli" onclick="ocultarMenu(3.2)"><div class="imgul">ACTUALIZAR</div></li>
-							<li class="opciones opcionesli" onclick="ocultarMenu(3.3)"><div class="imgul">BUSCAR</div></li>
-						</div>
-						<li class="opciones"><div class="imgul" onclick="mostrarMenu(4)">CONTROL POSTERIOR V.</div></li>
-						<div id="controlposterior">
-							<li class="opciones opcionesli" onclick="ocultarMenu(4.1)"><div class="imgul">REGISTRAR</div></li>
-							<li class="opciones opcionesli" onclick="ocultarMenu(4.2)"><div class="imgul">ACTUALIZAR</div></li>
-							<li class="opciones opcionesli" onclick="ocultarMenu(4.3)"><div class="imgul">BUSCAR</div></li>
-						</div>
-						<li class="opciones"><div class="imgul" onclick="mostrarMenu(5)">ACTUALIZACIÓN</div></li>
-						<div id="actualizacion">
-							<li class="opciones opcionesli" onclick="ocultarMenu(5.1)"><div class="imgul">REGISTRAR</div></li>
-							<li class="opciones opcionesli" onclick="ocultarMenu(5.2)"><div class="imgul">ACTUALIZAR</div></li>
-							<li class="opciones opcionesli" onclick="ocultarMenu(5.3)"><div class="imgul">BUSCAR</div></li>
-						</div>
-						<li class="opciones"><div class="imgul" onclick="mostrarMenu(6)">EJECUCIÓN</div></li>
-						<div id="ejecucion">
-							<li class="opciones opcionesli" onclick="ocultarMenu(6.1)"><div class="imgul">REGISTRAR</div></li>
-							<li class="opciones opcionesli" onclick="ocultarMenu(6.2)"><div class="imgul">ACTUALIZAR</div></li>
-							<li class="opciones opcionesli" onclick="ocultarMenu(6.3)"><div class="imgul">BUSCAR</div></li>
-						</div>
-						<li class="opciones"><div class="imgul" onclick="mostrarMenu(7)">CONSULTAS PROYECTOS</div></li>
-						<div id="consultas">
-							<li class="opciones opcionesli" onclick="ocultarMenu(7.1)"><div class="imgul">REGISTRAR</div></li>
-							<li class="opciones opcionesli" onclick="ocultarMenu(7.2)"><div class="imgul">ACTUALIZAR</div></li>
-							<li class="opciones opcionesli" onclick="ocultarMenu(7.3)"><div class="imgul">BUSCAR</div></li>
-						</div>
-						<li class=""><div class="imgusuario"><div id="nombresesion">JULIAN RODRIGUEZ</div></div></li>
-					</ul>
-				</div>
+					-->
+					<li class="opciones"><div class="imgul" onclick="mostrarMenu(2)">RADICACIÓN</div></li>
+					<div id="radicacion">
+						<li class="opciones opcionesli" onclick="ocultarMenu(2.1)"><div class="imgul">REGISTRAR</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(2.2)"><div class="imgul">LISTA DE CHEQUEO</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(2.3)"><div class="imgul">BUSCAR</div></li>
+					</div>
+					<li class="opciones"><div class="imgul" onclick="mostrarMenu(3)">VIABILIDAD</div></li>
+					<div id="viabilidad">
+						<li class="opciones opcionesli" onclick="ocultarMenu(3.1)"><div class="imgul">REGISTRAR</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(3.2)"><div class="imgul">ACTUALIZAR</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(3.3)"><div class="imgul">BUSCAR</div></li>
+					</div>
+					<li class="opciones"><div class="imgul" onclick="mostrarMenu(4)">CONTROL POSTERIOR V.</div></li>
+					<div id="controlposterior">
+						<li class="opciones opcionesli" onclick="ocultarMenu(4.1)"><div class="imgul">REGISTRAR</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(4.2)"><div class="imgul">ACTUALIZAR</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(4.3)"><div class="imgul">BUSCAR</div></li>
+					</div>
+					<li class="opciones"><div class="imgul" onclick="mostrarMenu(5)">ACTUALIZACIÓN</div></li>
+					<div id="actualizacion">
+						<li class="opciones opcionesli" onclick="ocultarMenu(5.1)"><div class="imgul">REGISTRAR</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(5.2)"><div class="imgul">ACTUALIZAR</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(5.3)"><div class="imgul">BUSCAR</div></li>
+					</div>
+					<li class="opciones"><div class="imgul" onclick="mostrarMenu(6)">EJECUCIÓN</div></li>
+					<div id="ejecucion">
+						<li class="opciones opcionesli" onclick="ocultarMenu(6.1)"><div class="imgul">REGISTRAR</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(6.2)"><div class="imgul">ACTUALIZAR</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(6.3)"><div class="imgul">BUSCAR</div></li>
+					</div>
+					<li class="opciones"><div class="imgul" onclick="mostrarMenu(7)">CONSULTAS PROYECTOS</div></li>
+					<div id="consultas">
+						<li class="opciones opcionesli" onclick="ocultarMenu(7.1)"><div class="imgul">REGISTRAR</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(7.2)"><div class="imgul">ACTUALIZAR</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(7.3)"><div class="imgul">BUSCAR</div></li>
+					</div>
+					<li class=""><div class="imgusuario"><div id="nombresesion">JULIAN RODRIGUEZ</div></div></li>
+				</ul>
 			</div>
+		</div>
 
+<?php }
+?>

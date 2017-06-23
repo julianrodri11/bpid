@@ -1,6 +1,6 @@
 // JavaScript Document
 // Desarrollado Ing Dario Santacruz
-          
+        
 $(document).ready(function() {
     $('.modal').modal();
     $('select').material_select();
@@ -26,10 +26,41 @@ $(document).ready(function() {
 						});
 });
 //FUNCION PARA CARGAR LA GRILLA DE LOS PROYECTOS
-function cargar_grillas_formulario(campos){
-	///var elem = campos.split('-');
-	//cargar_grilla_proyectos(campos);
-	 
-	   $('#miMenuDesplegable').append("<option value='op1' selected='selected'>Código de ejemplo Append 1</option>");
+function buscarViabilidades(criterio){
+    
+    var datos=document.getElementById("input_buscar").value;
+    var value =datos+'//'+criterio;
+ 	    
+    document.getElementById("resultado").innerHTML='<img src="../css/ajax-loader.gif" width="35" height="35">' 
+    jQuery.ajax({	
+        type: 'POST',
+        url:'../../modelo/consultas/cargar_radicar_listas.php',
+        async: true,
+        data:{value:value},
+        success:function(respuesta){
+        	document.getElementById("resultado").innerHTML='';
+             document.getElementById('resultado').innerHTML='<p>'+ respuesta + '</p>';
+        },
 
+        error: function () {
+            alert("Error inesperado")
+            window.top.location ="../index.html";	
+        }
+        
+    });
+    
+}
+
+function mas(cod){
+    
+    document.getElementById("mas").style.display = "block";
+    
+    document.getElementById("numero").innerHTML = cod;
+    
+}
+
+function cerrarFrmExterno(id){
+    
+    document.getElementById(id).style.display = "none";
+    
 }

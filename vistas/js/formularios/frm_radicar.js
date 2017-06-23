@@ -78,7 +78,7 @@ function archivo_xml()
 										processData:false,
 										success: function(existe)
 										{
-											//alert(existe)
+											alert(existe)
 									if(existe==0)//si el archivo existe
 									{
 
@@ -170,14 +170,15 @@ function almacenar()
  	entidad_proponente+'//'+entidad_ejecutante+'//'+num_id_responsable+'//'+nom_responsable+'//'+cargo_responsable+'//'+
  	direccion_responsable+'//'+telefono_responsable+'//'+cel_responsable+'//'+correo_responsable+'//'+id_usuario+'//'+nombre_usuario+'//'+
  	observaciones;
-
+ 	 $('#modal1').modal('close');
  	jQuery.ajax({	
 		    type: "POST",
               url:'../../controlador/c_radicar.php',
 			async: false,
 			data:{value:value},
+			
             success:function(respuesta){
-				//alert(respuesta)
+				alert(respuesta)
 				
 			if(respuesta==1){ 
 			

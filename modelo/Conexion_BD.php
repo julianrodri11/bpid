@@ -4,9 +4,9 @@
 class Conexion_BD extends PDO
 {
   
-  public $srv ='localhost';        // PostgreSQL server host
+  public $srv ='181.225.96.71';        // PostgreSQL server host
   public $usr ='postgres';        // PostgreSQL user
-  public $pas ='123456';    // PostgreSQL password
+  public $pas ='bpid2017';    // PostgreSQL password
   public $dba ='bpid';        // PostgreSQL database
   private $prt=5432;  // PostgreSQL port
   private $numrows= null;
