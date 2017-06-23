@@ -53,3 +53,38 @@
     
 }
 
+/*CODIGO FORMULARIO CSS PARA TABLA*/
+.formulario table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width:100%;
+    margin:0 auto;
+    border:2px solid #e6e6e6;
+    border-width:2px 2px 5px 2px;
+}
+.formulario td{
+    background-color:#FFF;
+    vertical-align:middle;
+    border:2px solid #e6e6e6;
+    border-width:2px 2px 2px 2px;
+    text-align:left;
+    padding:7px;
+    font-size:12px;
+    font-family:Helvetica;
+    font-weight:normal;
+    color:#000000;
+}
+.formulario table tr td:first-child {
+    width:46%;
+    background-color:#ffffe1;   
+}
+.formulario tr:first-child th{
+    background-color:#008643;
+    border:2px solid #008643;
+    stext-align:center;
+    padding:4px;
+    font-size:13px;
+    font-family:Helvetica;
+    font-weight:bold;
+    color:#f8fbfa;
+}

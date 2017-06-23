@@ -15,6 +15,7 @@
 <script type="text/javascript" src=<?php echo 'http://' . $_SERVER['SERVER_NAME'] . '/bpid/vistas/js/materialize.min.js' ?>></script>
 
 <link rel="stylesheet" type="text/css" href=<?php echo 'http://' . $_SERVER['SERVER_NAME'] . '/bpid/vistas/css/menu.css' ?>>
+<link rel="stylesheet" type="text/css" href=<?php echo 'http://' . $_SERVER['SERVER_NAME'] . '/bpid/vistas/css/cssbpid/styles.css' ?>>
 <link rel="stylesheet" type="text/css" href=<?php echo 'http://' . $_SERVER['SERVER_NAME'] . '/bpid/vistas/css/jquery-ui.css' ?>>
 <link rel="stylesheet" type="text/css" href=<?php echo 'http://' . $_SERVER['SERVER_NAME'] . '/bpid/vistas/css/theme.css' ?>>
 <link rel="stylesheet" type="text/css" href=<?php echo 'http://' . $_SERVER['SERVER_NAME'] . '/bpid/vistas/css/cambiosgenerales.css' ?>>
