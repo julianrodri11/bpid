@@ -119,7 +119,7 @@
                                                 <span>Buscar proyecto</span>
                                             </div>
                                             <div class="file-path-wrapper">
-                                                <input id="input_buscar" class="file-path validate" type="text" placeholder="Buscar..." onkeydown="buscarViabilidades();">
+                                                <input id="input_buscar" class="file-path validate" type="text" placeholder="Buscar..." onkeypress="buscarViabilidades();">
                                             </div>
                                         </div>
                                         <div class="descripcion">&nbsp;&nbsp;&nbsp;Realiza la búsqueda por numero o nombre del proyecto</div>
