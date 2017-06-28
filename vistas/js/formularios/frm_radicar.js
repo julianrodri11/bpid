@@ -171,6 +171,7 @@ function almacenar()
  	direccion_responsable+'//'+telefono_responsable+'//'+cel_responsable+'//'+correo_responsable+'//'+id_usuario+'//'+nombre_usuario+'//'+
  	observaciones;
  	 $('#modal1').modal('close');
+ 	 
  	jQuery.ajax({	
 		    type: "POST",
               url:'../../controlador/c_radicar.php',
@@ -184,14 +185,14 @@ function almacenar()
 			
 			var formData=new FormData($("#frm_radicar")[0]);  //lo hago por la validacion
 										$.ajax({
-						  url:'../../controlador/c_archivos.php',
+						  url:'../../controlador/CArchivos.php',
 										type: "POST",
 										data: formData,
 										contentType:false,
 										processData:false,
 										success: function(datos)
 										{
-										//alert(datos);
+										alert(datos);
 			 $('#modal1').modal('close');							
 			document.getElementById('d_ingreso').innerHTML='<p>'+ datos + '</p>';
 			$("#d_ingreso").dialog("open");
@@ -206,9 +207,6 @@ function almacenar()
 			{
 			if(respuesta==0){var mensaje="ERROR, INTENTELO NUEVAMENTE"}
 			if(respuesta==2){var mensaje="ERROR,HAY DATOS EN BLANCO QUE DEBEN REGISTRARSE"}
-			if(respuesta==3){var mensaje="ERROR,EL CORREO ELECTRONICO ES INCORRECTO"}
-			if(respuesta==4){var mensaje="ERROR,LOS DATOS DEL PROYECTO NO FUERON INGRESADOS"}
-			if(respuesta==5){var mensaje="ERROR,LOS DATOS DE RADICACION NO FUERON INGRESADOS"}
 			document.getElementById('d_error').innerHTML='<p>'+ mensaje + '</p>';
 			$("#d_error").dialog("open");
 			return false;
