@@ -97,11 +97,9 @@
     <div id="d_error" title="ALERTA"></div>
     <div id="d_ingreso" title="INFORMACION"></div>
     <?php require_once '../menu.php';?>
-    <form id='frm_radicar' name='frm_viabilidad' onSubmit="return false"  enctype="multipart/form-data">
+    <form id='frm_viabilidad' name='frm_viabilidad' onSubmit="return false"  enctype="multipart/form-data">
         
         <!-- --------------------------------------------- -->
-        
-        <>
         
         <div class="col s12 m11 l9">
             <div class="bajar">
@@ -121,7 +119,7 @@
                                                 <span>Buscar proyecto</span>
                                             </div>
                                             <div class="file-path-wrapper">
-                                                <input id="input_buscar" class="file-path validate" type="text" placeholder="Buscar..." onkeydown="buscarViabilidades();">
+                                                <input id="input_buscar" class="file-path validate" type="text" placeholder="Buscar..." onkeypress="buscarViabilidades();">
                                             </div>
                                         </div>
                                         <div class="descripcion">&nbsp;&nbsp;&nbsp;Realiza la búsqueda por numero o nombre del proyecto</div>

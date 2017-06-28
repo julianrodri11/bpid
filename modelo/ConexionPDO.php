@@ -33,7 +33,7 @@ class ConexionPDO
         {
           $query = $this->pdo->prepare($sql);
                 $query->execute();
-                $rt = $query->fetchAll(PDO::FETCH_ASSOC);
+                $rt = $query->fetchAll(PDO::FETCH_BOTH);
                
         } catch(PDOException $e) {
      
