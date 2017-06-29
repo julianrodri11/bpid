@@ -33,9 +33,9 @@ require_once '../ConexionPDO.php';
 					$res = $this->con->cantidadRegistros($consulta);
 					
 				   	if($res>0)
-						return 0;
-					else
 						return 1;
+					else
+						return 0;
                 }catch(ErrorException $e){
                 echo 'Error: '.$e;
             	}

@@ -81,6 +81,7 @@ function archivo_xml()
  	}
  	else
  	{
+ 		bloquear_pantalla();
  	var formData=new FormData($("#frm_radicar")[0]);  //lo hago por la validacion
 										$.ajax({
 						  url:'../../modelo/consultas/consultar_existencia_xml.php',
@@ -90,7 +91,8 @@ function archivo_xml()
 										processData:false,
 										success: function(existe)
 										{
-											alert(existe)
+											//alert(existe)
+											quitar_pantalla();
 									if(existe==0)//si el archivo existe
 									{
 
@@ -134,7 +136,8 @@ function archivo_xml()
 									}
 									else
 									{
-						$('#modal1').modal('close');							
+						$('#modal1').modal('close');
+						quitar_pantalla();							
 						document.getElementById('d_ingreso').innerHTML='<p> EL ARCHIVO YA SE ENCUENTRA RADICADO!, SELECCIONE UNO NUEVO</p>';
 						$("#d_ingreso").dialog("open");
 						return false;

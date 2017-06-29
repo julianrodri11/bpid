@@ -218,7 +218,7 @@
 						      <h6>RESPONSABLE DEL PROYECTO</h6>
 						        <div class="input-field col s6">
 						          <input  id="frm_id_responsable" name="frm_id_responsable" type="text" class="validate"
-						         >
+						         onKeyPress="return solonum(event)">
 						          <label for="frm_id_responsable">No IDENTIFICACION</label>
 						           <div id="d_frm_id_responsable"></div>
 						        </div>
