@@ -17,7 +17,7 @@ class m_login
         $modelo   = new Conexion_PDO();
         $conexion = $modelo->get_conexion();
         #PREPARO LA SQL PARA VERIFICAR SI EL USUARIO EXISTE Y ESTA ACTIVO
-        $sql       = "SELECT correo,contrasena,estado FROM login WHERE correo='$correo' AND contrasena='$contrasena' AND estado='ACTIVO'";
+        $sql       = "SELECT correo,contrasena,estado FROM seguridad.login WHERE correo='$correo' AND contrasena='$contrasena' AND estado='ACTIVO'";
         $statement = $conexion->prepare($sql);
         $statement->execute();
         $resultados = $statement->fetch();
