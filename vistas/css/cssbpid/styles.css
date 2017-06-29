@@ -11,7 +11,13 @@
     overflow-x: hidden;
     
 }
-
+.frm_externo img{
+    margin-left:50%;
+	transform:translateX(-50%);
+	margin-top:50%;
+	transform:translateY(-50%);
+    
+}
 .form_ext{
     
     max-width: 900px;

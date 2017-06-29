@@ -6,7 +6,7 @@ function buscarViabilidades(){
     
     jQuery.ajax({	
         type: 'POST',
-        url:'../../modelo/consultas/CargarRadicados.php',
+        url:'../../modelo/CargarRadicados.php',
         async: true,
         data:{value:value},
         success:function(respuesta){
@@ -29,7 +29,23 @@ function mas(cod){
     document.getElementById("mas").style.display = "block";
     document.body.style.overflow = "hidden";
     
-    document.getElementById("numero").innerHTML = cod;
+    jQuery.ajax({	
+        type: 'POST',
+        url:'../../modelo/consultas/frmListas.php',
+        async: true,
+        data:{value:value},
+        success:function(respuesta){
+            
+            document.getElementById('list').innerHTML='<p>'+ respuesta + '</p>';
+
+        },
+
+        error: function () {
+            alert("Error inesperado")
+            window.top.location ="../index.html";	
+        }
+        
+    });
     
 }
 
