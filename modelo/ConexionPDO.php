@@ -9,6 +9,7 @@ class ConexionPDO
   private $host="181.225.96.71";
   private $db="bpid";
   private $pdo;
+  
 
   public function __construct()
   {
@@ -32,7 +33,7 @@ class ConexionPDO
         {
           $query = $this->pdo->prepare($sql);
                 $query->execute();
-                $rt = $query->fetchAll(PDO::FETCH_ASSOC);
+                $rt = $query->fetchAll(PDO::FETCH_BOTH);
                
         } catch(PDOException $e) {
      
@@ -63,6 +64,27 @@ class ConexionPDO
   {
       $this->pdo=null;
   }
+
+  //FUNCION Q DEVUELVE VALOR
+  public function consultarValor($sql)
+    {
+
+     $rt = null;
+    try
+        {
+          $query = $this->pdo->prepare($sql);
+                $query->execute();
+                $rt = $query->fetchAll(PDO::FETCH_BOTH);
+                $rt = $rt[0];
+               
+        } catch(PDOException $e) {
+     
+                error_log( $e->getMessage() ); 
+     
+            }
+        return $rt;
+    }
+
 }
 /*  DESCOMENTAR PARA PROBAR SI SE ESTA HACIENDO
  *   BIEN LA CONEXION A LA BASE DE DATOS*/

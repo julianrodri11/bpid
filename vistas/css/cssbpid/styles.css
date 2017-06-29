@@ -64,14 +64,13 @@
     
 }
 
-<<<<<<< HEAD
+
 .form_ext hr{
     
     margin: 13px;
     
 }
 
-=======
 /*CODIGO FORMULARIO CSS PARA TABLA*/
 .formulario table{
     border-collapse: collapse;
@@ -100,11 +99,10 @@
 .formulario tr:first-child th{
     background-color:#008643;
     border:2px solid #008643;
-    stext-align:center;
+    text-align:center;
     padding:4px;
     font-size:13px;
     font-family:Helvetica;
     font-weight:bold;
     color:#f8fbfa;
 }
->>>>>>> b15fb6b7424c710614a64b97e0c25cbc779de4c9
