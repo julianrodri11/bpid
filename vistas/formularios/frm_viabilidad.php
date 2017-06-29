@@ -93,9 +93,7 @@
     
     <div id="d_error" title="ALERTA"></div>
     <div id="d_ingreso" title="INFORMACION"></div>
-    
-    <div id="d_error" title="ALERTA"></div>
-    <div id="d_ingreso" title="INFORMACION"></div>
+
     <?php require_once '../menu.php';?>
     <form id='frm_viabilidad' name='frm_viabilidad' onSubmit="return false"  enctype="multipart/form-data">
         

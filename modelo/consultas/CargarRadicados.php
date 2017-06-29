@@ -4,7 +4,7 @@ require_once '../ConexionPDO.php';
 
     //session_start();
     
-    class ConsultasViabilidad{
+    class CargarRadicados{
         
         private $con;
         
@@ -51,8 +51,8 @@ require_once '../ConexionPDO.php';
     if(!empty($_POST['value'])){
 
         $datos = $_POST['value'];
-        $viabilidad = new ConsultasViabilidad();
-        $viabilidad->getRadicados($datos);
+        $radicados = new CargarRadicados();
+        $radicados->getRadicados($datos);
         
     }
 
