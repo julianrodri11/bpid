@@ -11,6 +11,8 @@
 </head>
 
 <body>
+<div id="dario"></div>
+  <div id="mas" class="frm_externo"><img src="../css/ajax-loader.gif"></div>
 <div id="d_error" title="ALERTA"></div>
 <div id="d_ingreso" title="INFORMACION"></div>
 <?php require_once '../menu.php';?>
@@ -197,8 +199,7 @@
 							      </div>
 									<div class="row">
         							<div class="input-field col s12">
-							         <input  id="frm_entidad" name="frm_entidad" type="text" class="validate"
-							          onKeyPress="return sololet(event)">
+							         <input  id="frm_entidad" name="frm_entidad" type="text" class="validate">
          							 <label for="frm_entidad" id="lbl_frm_entidad">ENTIDAD PROPONENTE</label>
          							 <div id="d_frm_entidad"></div>
 							        </div>
@@ -206,8 +207,7 @@
 							      <BR>
 							      <div class="row">
         							<div class="input-field col s12">
-							       <input  id="frm_entidad_ejecuta" name="frm_entidad_ejecuta" type="text" class="validate"
-							        onKeyPress="return sololet(event)">
+							       <input  id="frm_entidad_ejecuta" name="frm_entidad_ejecuta" type="text" class="validate" >
          							 <label for="frm_entidad_ejecuta" id="lbl_">ENTIDAD EJECUTANTE</label>
          							  <div id="d_frm_entidad_ejecuta"></div>
 							        </div>
@@ -218,13 +218,13 @@
 						      <h6>RESPONSABLE DEL PROYECTO</h6>
 						        <div class="input-field col s6">
 						          <input  id="frm_id_responsable" name="frm_id_responsable" type="text" class="validate"
-						          onKeyPress="return solonum(event)">
+						         >
 						          <label for="frm_id_responsable">No IDENTIFICACION</label>
 						           <div id="d_frm_id_responsable"></div>
 						        </div>
 						        <div class="input-field col s6">
 						          <input id="frm_nom_responsable" name="frm_nom_responsable" type="text" class="validate"
-						          onKeyPress="return sololet(event)" >
+						        >
 						          <label for="frm_nom_responsable">NOMBRE RESPONSABLE</label>
 						          <div id="d_frm_nom_responsable"></div>
 						        </div>
@@ -232,8 +232,7 @@
 						      <div class="row">
 						      <br>
 						        <div class="input-field col s6">
-						          <input  id="frm_cargo_responsable" name="frm_cargo_responsable" type="text" class="validate"
-						          onKeyPress="return sololet(event)">
+						          <input  id="frm_cargo_responsable" name="frm_cargo_responsable" type="text" class="validate"						        >
 						          <label for="frm_cargo_responsable">CARGO</label>
 						          <div id="d_frm_cargo_responsable"></div>
 						        </div>
@@ -277,7 +276,7 @@
 						        </div>
 						        <div class="input-field col s6">
 						          <input id="frm_nom_usuario" name="frm_nom_usuario" type="text" class="validate"
-						           onKeyPress="return sololet(event)">
+						          >
 						          <label for="frm_nom_usuario">NOMBRE USUARIO</label>
 						          <div id="d_frm_nom_usuario"></div>
 						        </div>

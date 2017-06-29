@@ -31,7 +31,7 @@ class ControladorArchivos{
 
     }
 
-    public function subirArchivos()
+    public function insertarArchivos()
   {
     
                     $this->mArchivos=new MArchivos();
@@ -44,6 +44,8 @@ class ControladorArchivos{
                 
     
   }
+  
+ 
 public function moverArchivos()
 {
   try 
@@ -76,8 +78,8 @@ public function moverArchivos()
         $archivos= new ControladorArchivos();
         $archivos->asignar($num_programa,$num_proyecto,$archivo_tempo);
         $archivos->moverArchivos();
-         echo $archivos->subirArchivos();
-        //echo $archivo_tempo['tmp_name'] ; 
+        echo $archivos->insertarArchivos();
+        
         
   }
 
