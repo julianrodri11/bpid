@@ -8,12 +8,28 @@
 	<?php require_once '../links.php';?>
         <script type="text/javascript" src="../js/formularios/frm_listas_radicar.js"></script>
 	<script type="text/javascript" src="../../modelo/fun_propias/validacion_campos.js"></script>
+        <script>
+        $( function() {
+          $( "#listas" ).accordion();
+        });
+        
+        $( function() {
+          $( "#listas2" ).accordion();
+        });
+        </script>
         <link type="text/css" rel="stylesheet" href="../css/cssbpid/styles.css">
 </head>
 
 <body onload="buscarViabilidades('0');">
         
-    
+    <div id="mas" class="frm_externo">
+        <div class="cerrar" onclick="cerrarFrmExterno('mas');"></div>
+        <div class="form_ext">
+            <div id="list">
+                
+            </div>
+        </div>
+    </div>
     
     <div id="d_error" title="ALERTA"></div>
     <div id="d_ingreso" title="INFORMACION"></div>
@@ -28,7 +44,7 @@
                 <div class="container-fluid">
                     
                     <div class="row">
-                        <div class="col s12 m12 l12 center-align"><div class="titulofrm">PROYECTOS RADICADOS</div></div>
+                        <div class="col s12 m12 l12 center-align"><div class="titulofrm">LISTA GENERAL</div></div>
                         <br><br>
                     </div>
                     <div class="row">
@@ -54,12 +70,6 @@
                                 
                                 
                             </div>
-                            
-                        </div>
-                    </div>
-
-                  
-                    
 
                 <!--div class="col s12 m12 l12">
                         <?php require_once "footer.php";?>

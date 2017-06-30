@@ -1,45 +1,18 @@
-// JavaScript Document
-// Desarrollado Ing Dario Santacruz
-        
-$(document).ready(function() {
-    $('.modal').modal();
-    $('select').material_select();
-
-    $("#d_error").dialog({
-						autoOpen: false,
-						modal: true,
-						buttons: {
-						"Cerrar": function () {
-						$(this).dialog("close");
-											  }
-								}
-						});
-     $("#d_ingreso").dialog({
-						autoOpen: false,
-						modal: true,
-						buttons: {
-						"Aceptar": function () {
-						$(this).dialog("close");
-						window.self.location="../formularios/frm_radicar.php";
-											  }
-								}
-						});
-});
-//FUNCION PARA CARGAR LA GRILLA DE LOS PROYECTOS
-function buscarViabilidades(criterio){
+function buscarViabilidades(){
     
-    var datos=document.getElementById("input_buscar").value;
-    var value =datos+'//'+criterio;
- 	    
-    document.getElementById("resultado").innerHTML='<img src="../css/ajax-loader.gif" width="35" height="35">' 
+    var datos;
+
+    value = document.getElementById("input_buscar").value;
+    
     jQuery.ajax({	
         type: 'POST',
-        url:'../../modelo/consultas/cargar_radicar_listas.php',
+        url:'../../modelo/CargarRadicados.php',
         async: true,
         data:{value:value},
         success:function(respuesta){
-        	document.getElementById("resultado").innerHTML='';
-             document.getElementById('resultado').innerHTML='<p>'+ respuesta + '</p>';
+            
+            document.getElementById('resultado').innerHTML='<p>'+ respuesta + '</p>';
+
         },
 
         error: function () {
@@ -54,13 +27,31 @@ function buscarViabilidades(criterio){
 function mas(cod){
     
     document.getElementById("mas").style.display = "block";
+    document.body.style.overflow = "hidden";
     
-    document.getElementById("numero").innerHTML = cod;
+    jQuery.ajax({	
+        type: 'POST',
+        url:'../../modelo/consultas/frmListas.php',
+        async: true,
+        data:{value:value},
+        success:function(respuesta){
+            
+            document.getElementById('list').innerHTML='<p>'+ respuesta + '</p>';
+
+        },
+
+        error: function () {
+            alert("Error inesperado")
+            window.top.location ="../index.html";	
+        }
+        
+    });
     
 }
 
 function cerrarFrmExterno(id){
     
     document.getElementById(id).style.display = "none";
+    document.body.style.overflow = "scroll";
     
 }

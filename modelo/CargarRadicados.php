@@ -1,10 +1,10 @@
 <?php
 
-require_once '../ConexionPDO.php';
+require_once './ConexionPDO.php';
 
     //session_start();
     
-    class ConsultasViabilidad{
+    class CargarRadicados{
         
         private $con;
         
@@ -28,14 +28,15 @@ require_once '../ConexionPDO.php';
                 echo '</thead>';
                 echo '<tbody>';
 
-                if(count($res))
-                    foreach($res as $fila){
+                if($res->rowCount()){
+                    while($res2 = $res->fetch(PDO::FETCH_OBJ)){
 
-                        echo '<tr><td>'.$fila[0].'</td><td>'.$fila[1].'</td><td title="'.$fila[2].'">'.$fila[3].'</td><td><a href="#" title="Ver Más"><div onclick="mas('.$fila[4].');"><img src="../../vistas/img/anadir.png"></div></a></td></tr>';
+                        echo '<tr><td>'.$res2->cod.'</td><td>'.$res2->num.'</td><td title="'.$res2->nombre.'">'.$res2->abr.'</td><td><a href="#" title="Ver Más"><div onclick="mas('.$res2->cod.');"><img src="../../vistas/img/anadir.png"></div></a></td></tr>';
 
                     }
-                else
+                }else{
                     echo '<tr><td>No se encontraron resultados para la búsqueda.</td></tr>';
+                }
 
                 echo '</tbody>';
                 echo '</table>';
@@ -51,8 +52,8 @@ require_once '../ConexionPDO.php';
     if(!empty($_POST['value'])){
 
         $datos = $_POST['value'];
-        $viabilidad = new ConsultasViabilidad();
-        $viabilidad->getRadicados($datos);
+        $radicados = new CargarRadicados();
+        $radicados->getRadicados($datos);
         
     }
 

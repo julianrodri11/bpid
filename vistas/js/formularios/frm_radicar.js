@@ -1,7 +1,19 @@
 // JavaScript Document
 // Desarrollado Ing Dario Santacruz
-          
+function bloquear_pantalla()
+{
+   
+    document.getElementById("mas").style.display = "block";
+    document.body.style.overflow = "hidden";
+}
+function quitar_pantalla()
+{
+   
+    document.getElementById("mas").style.display = "none";
+    document.body.style.overflow = "scroll";
+}
 $(document).ready(function() {
+	
    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
    $('.modal').modal();
     $('select').material_select();
@@ -69,6 +81,7 @@ function archivo_xml()
  	}
  	else
  	{
+ 		bloquear_pantalla();
  	var formData=new FormData($("#frm_radicar")[0]);  //lo hago por la validacion
 										$.ajax({
 						  url:'../../modelo/consultas/consultar_existencia_xml.php',
@@ -78,7 +91,8 @@ function archivo_xml()
 										processData:false,
 										success: function(existe)
 										{
-											alert(existe)
+											//alert(existe)
+											quitar_pantalla();
 									if(existe==0)//si el archivo existe
 									{
 
@@ -92,20 +106,27 @@ function archivo_xml()
 													{
 													var cadena=datos.split("/");
 													nombre_proyecto.focus();
+													nombre_proyecto.value='';
 													nombre_proyecto.value=cadena[0];
 													numero_proyecto.focus();
+													numero_proyecto.value='';
 													numero_proyecto.value=cadena[8];
 													sector.focus();
 													sector.value=cadena[1];
 													localizacion.focus();
+													localizacion.value='';
 													localizacion.value=cadena[2];
 													eje.focus();
+													eje.value='';
 													eje.value=cadena[3];
 													programa.focus();
+													programa.value='';
 													programa.value=cadena[4];
 													subprograma.focus();
+													subprograma.value='';
 													subprograma.value=cadena[5];
 													valor.focus();
+													valor.value='';
 													valor.value=cadena[7];
 													}
 													});	
@@ -115,7 +136,8 @@ function archivo_xml()
 									}
 									else
 									{
-						$('#modal1').modal('close');							
+						$('#modal1').modal('close');
+						quitar_pantalla();							
 						document.getElementById('d_ingreso').innerHTML='<p> EL ARCHIVO YA SE ENCUENTRA RADICADO!, SELECCIONE UNO NUEVO</p>';
 						$("#d_ingreso").dialog("open");
 						return false;
@@ -171,7 +193,7 @@ function almacenar()
  	direccion_responsable+'//'+telefono_responsable+'//'+cel_responsable+'//'+correo_responsable+'//'+id_usuario+'//'+nombre_usuario+'//'+
  	observaciones;
  	 $('#modal1').modal('close');
- 	 
+ 	bloquear_pantalla();
  	jQuery.ajax({	
 		    type: "POST",
               url:'../../controlador/c_radicar.php',
@@ -179,11 +201,10 @@ function almacenar()
 			data:{value:value},
 			
             success:function(respuesta){
-				alert(respuesta)
+				//alert(respuesta)
 				
 			if(respuesta==1){ 
-			
-			var formData=new FormData($("#frm_radicar")[0]);  //lo hago por la validacion
+				var formData=new FormData($("#frm_radicar")[0]);  //lo hago por la validacion
 										$.ajax({
 						  url:'../../controlador/CArchivos.php',
 										type: "POST",
@@ -192,21 +213,20 @@ function almacenar()
 										processData:false,
 										success: function(datos)
 										{
-										alert(datos);
+										quitar_pantalla();	
+										//alert(datos);
 			 $('#modal1').modal('close');							
-			document.getElementById('d_ingreso').innerHTML='<p>'+ datos + '</p>';
+			document.getElementById('d_ingreso').innerHTML='<p>EL NUMERO BPID ASIGNADO ES :'+ datos + '</p>';
 			$("#d_ingreso").dialog("open");
 
-							 //window.self.location="../formularios/frm_radicar.php";
-										}
+																}
 										});			
 			
 			
 			}
 			else
 			{
-			if(respuesta==0){var mensaje="ERROR, INTENTELO NUEVAMENTE"}
-			if(respuesta==2){var mensaje="ERROR,HAY DATOS EN BLANCO QUE DEBEN REGISTRARSE"}
+			
 			document.getElementById('d_error').innerHTML='<p>'+ mensaje + '</p>';
 			$("#d_error").dialog("open");
 			return false;

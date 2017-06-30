@@ -25,7 +25,7 @@ class ConexionPDO
 
   }
 
-  public function consultar($sql)
+  public function  consultarValor($sql)
     {
 
      $rt = null;
@@ -33,8 +33,8 @@ class ConexionPDO
         {
           $query = $this->pdo->prepare($sql);
                 $query->execute();
-                $rt = $query->fetchAll(PDO::FETCH_BOTH);
-               
+                if($res = $query->fetch(PDO::FETCH_OBJ))
+               	 	$rt=$rt.$res->numero_completo;
         } catch(PDOException $e) {
      
                 error_log( $e->getMessage() ); 
@@ -66,7 +66,7 @@ class ConexionPDO
   }
 
   //FUNCION Q DEVUELVE VALOR
-  public function consultarValor($sql)
+  public function consultar($sql)
     {
 
      $rt = null;
@@ -74,8 +74,26 @@ class ConexionPDO
         {
           $query = $this->pdo->prepare($sql);
                 $query->execute();
-                $rt = $query->fetchAll(PDO::FETCH_BOTH);
-                $rt = $rt[0];
+                $rt = $query;
+               
+        } catch(PDOException $e) {
+     
+                error_log( $e->getMessage() ); 
+     
+            }
+        return $rt;
+    }
+
+    public function cantidadRegistros($sql)
+    {
+
+     $rt = null;
+    try
+        {
+          $query = $this->pdo->prepare($sql);
+                $query->execute();
+                $rt =$query->rowCount();
+                
                
         } catch(PDOException $e) {
      
