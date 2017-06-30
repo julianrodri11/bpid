@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title></title>
@@ -31,7 +31,7 @@
 				</div>
 				<div class="col l3"></div>
 
-				
+
 				<div class="col s12 m12 l3"></div>
 
 			</div>
@@ -237,11 +237,11 @@
 						</div>
 					</div>
 				<div class="col s12 m12 l12">
-				
+
 				</div-->
 			</div>
 			<div class="col s12 m12 l12">
-					
+
 				</div>
 		</div-->
 

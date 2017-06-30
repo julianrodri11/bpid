@@ -1,11 +1,11 @@
 <?php
 session_start();
 if (!isset($_SESSION['usuario'])) {
-  header('location:http://localhost/bpid/');
+    header('location:http://localhost/bpid/');
 } else {
-  //  echo "Existe una sesion";
+    //  echo "Existe una sesion";
 
-  ?>
+    ?>
 <script type="text/javascript">
 	/*
 		*activador para menu
@@ -33,6 +33,8 @@ if (!isset($_SESSION['usuario'])) {
 				case '6oculto':	$( "#ejecucionOculto" ).toggle("slow");		break;
 				case 7: 		$( "#consultas" ).toggle("slow");			break;
 				case '7oculto':	$( "#consultasOculto" ).toggle("slow");		break;
+				case 8: 		$( "#configuraciones" ).toggle("slow");			break;
+				case '8oculto':	$( "#configuracionOculto" ).toggle("slow");		break;
 			}
 
 		}
@@ -82,6 +84,9 @@ if (!isset($_SESSION['usuario'])) {
 				case 7.22:$( "#consultas" ).toggle("slow");window.location.href="http://localhost/bpid/vistas/index.php";break;
 				case 7.3:
 				case 7.33:$( "#consultas" ).toggle("slow");window.location.href="http://localhost/bpid/vistas/index.php";break;
+				case 8.1:
+				case 8.11:$( "#configuraciones" ).toggle("slow");window.location.href="http://localhost/bpid/vistas/index.php";break;
+
 			}
 
 		}
@@ -93,13 +98,13 @@ if (!isset($_SESSION['usuario'])) {
 				<label id="nombresesionsup" >
 					<?php
 echo strtoupper($_SESSION['usuario']); ?>
-					<a href="../../controlador/cerrar.php">CERRAR SESIÓN
+					<a href=<?php echo 'http://' . $_SERVER['SERVER_NAME'] . '/bpid/controlador/cerrar.php' ?>>CERRAR SESIÓN</a>
 
 				</label>
 				<label id="fechasupederecha">
 					<?php date_default_timezone_set("America/Bogota");
-  $time = time();
-  echo date("D d - M m - Y H:i:s:A", $time);?>
+    echo strftime(" FECHA: %F HORA: %T");
+    ?>
 				</label></div>
 			</div>
 		</div>
@@ -160,6 +165,12 @@ echo strtoupper($_SESSION['usuario']); ?>
 						<li class="opciones opcionesli" onclick="ocultarMenu(7.22)"><div class="imgul">ACTUALIZAR</div></li>
 						<li class="opciones opcionesli" onclick="ocultarMenu(7.33)"><div class="imgul">BUSCAR</div></li>
 					</div>
+					<li class="opciones"><div class="imgul" onclick="mostrarMenu('8oculto')">CONFIGURACIONES</div></li>
+					<div id="configuracionesOculto">
+						<li class="opciones opcionesli" onclick="ocultarMenu(8.11)"><div class="imgul">REGISTRAR</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(8.22)"><div class="imgul">ACTUALIZAR</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(8.33)"><div class="imgul">BUSCAR</div></li>
+					</div>
 					<li class=""><div class="imgusuario"><div id="nombresesion">JULIAN RODRIGUEZ</div></div></li>
 				</ul>
 			</div>
@@ -215,6 +226,13 @@ echo strtoupper($_SESSION['usuario']); ?>
 						<li class="opciones opcionesli" onclick="ocultarMenu(7.2)"><div class="imgul">ACTUALIZAR</div></li>
 						<li class="opciones opcionesli" onclick="ocultarMenu(7.3)"><div class="imgul">BUSCAR</div></li>
 					</div>
+					<li class="opciones"><div class="imgul" onclick="mostrarMenu(8)">CONFIGURACIONES</div></li>
+					<div id="configuraciones">
+						<li class="opciones opcionesli" onclick="ocultarMenu(8.1)"><div class="imgul">USUARIOS</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(8.2)"><div class="imgul">PERMISOS</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(8.3)"><div class="imgul">BUSCAR</div></li>
+					</div>
+
 					<li class=""><div class="imgusuario"><div id="nombresesion">JULIAN RODRIGUEZ</div></div></li>
 				</ul>
 			</div>

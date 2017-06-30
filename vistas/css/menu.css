@@ -215,10 +215,10 @@ importando fuente para los menus
   text-align: center;
 }
 
-#inicio, #radicacion, #viabilidad, #controlposterior, #actualizacion, #ejecucion, #consultas {
+#inicio, #radicacion, #viabilidad, #controlposterior, #actualizacion, #ejecucion, #consultas,#configuraciones {
   display: none;
 }
 
-#inicioOculto, #radicacionOculto, #viabilidadOculto, #controlposteriorOculto, #actualizacionOculto, #ejecucionOculto, #consultasOculto {
+#inicioOculto, #radicacionOculto, #viabilidadOculto, #controlposteriorOculto, #actualizacionOculto, #ejecucionOculto, #consultasOculto ,#configuracionesOculto{
   display: none;
 }
