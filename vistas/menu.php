@@ -53,7 +53,7 @@ if (!isset($_SESSION['usuario'])) {
 				case 2.2:
 				case 2.22:$( "#radicacion" ).toggle("slow");window.location.href="http://localhost/bpid/vistas/formularios/frm_listas_radicar.php";break;
 				case 2.3:
-				case 2.33:$( "#radicacion" ).toggle("slow");window.location.href="http://localhost/bpid/vistas/index.php";break;
+				case 2.33:$( "#radicacion" ).toggle("slow");window.location.href="http://localhost/bpid/vistas/formularios/frm_certificado_radicar.php";break;
 				case 3.1:
 				case 3.11:$( "#viabilidad" ).toggle("slow");window.location.href="http://localhost/bpid/vistas/index.php";break;
 				case 3.2:
@@ -133,7 +133,7 @@ echo strtoupper($_SESSION['usuario']); ?>
 					<div id="radicacionOculto">
 						<li class="opciones opcionesli" onclick="ocultarMenu(2.11)"><div class="imgul">REGISTRAR</div></li>
 						<li class="opciones opcionesli" onclick="ocultarMenu(2.22)"><div class="imgul">LISTA DE CHEQUEO</div></li>
-						<li class="opciones opcionesli" onclick="ocultarMenu(2.33)"><div class="imgul">BUSCAR</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(2.33)"><div class="imgul">GENERAR CERTIFICADO</div></li>
 					</div>
 					<li class="opciones"><div class="imgul" onclick="mostrarMenu('3oculto')">VIABILIDAD</div></li>
 					<div id="viabilidadOculto">
@@ -194,7 +194,7 @@ echo strtoupper($_SESSION['usuario']); ?>
 					<div id="radicacion">
 						<li class="opciones opcionesli" onclick="ocultarMenu(2.1)"><div class="imgul">REGISTRAR</div></li>
 						<li class="opciones opcionesli" onclick="ocultarMenu(2.2)"><div class="imgul">LISTA DE CHEQUEO</div></li>
-						<li class="opciones opcionesli" onclick="ocultarMenu(2.3)"><div class="imgul">BUSCAR</div></li>
+						<li class="opciones opcionesli" onclick="ocultarMenu(2.3)"><div class="imgul">GENERAR CERTIFICADO</div></li>
 					</div>
 					<li class="opciones"><div class="imgul" onclick="mostrarMenu(3)">VIABILIDAD</div></li>
 					<div id="viabilidad">

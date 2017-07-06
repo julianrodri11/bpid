@@ -6,7 +6,7 @@ class CargarListas{
     
     public static function getListaGeneral(){
         
-        $consulta = 'select cod, des from get_lista_general() as ("cod" integer, "des" varchar);';
+        $consulta = 'select cod, des, tipo from get_lista_general() as ("cod" integer, "des" varchar, "tipo" varchar);';
         
         $con = new ConexionPDO();
         $res = $con->consultar($consulta);
@@ -16,9 +16,9 @@ class CargarListas{
         
     }
     
-    public static function getRequisitos($cod){
+    public static function getRequisitos($fil,$cod){
         
-        $consulta = 'select cod, des from get_requisitos('.$cod.') as ("cod" integer, "des" varchar);';
+        $consulta = 'select id, cod, des, estado from get_requisitos('.$fil.','.$cod.') as ("id" varchar, "cod" integer, "des" varchar, "estado" varchar);';
     
         $con = new ConexionPDO();
         $res = $con->consultar($consulta);
@@ -28,9 +28,9 @@ class CargarListas{
         
     }
     
-    public static function getSubRequisitos($cod){
+    public static function getSubRequisitos($fil,$cod){
         
-        $consulta = 'select cod, des from get_sub_requisitos('.$cod.') as ("cod" integer, "des" varchar);';
+        $consulta = 'select id, cod, des, estado from get_sub_requisitos('.$fil.','.$cod.') as ("id" varchar, "cod" integer, "des" varchar, "estado" varchar);';
         
         $con = new ConexionPDO();
         $res = $con->consultar($consulta);

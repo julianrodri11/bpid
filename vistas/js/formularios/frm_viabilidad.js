@@ -6,7 +6,7 @@ function buscarViabilidades(){
     
     jQuery.ajax({	
         type: 'POST',
-        url:'../../modelo/consultas/CargarRadicados.php',
+        url:'../../formulariosDinamicos/frmRadicados.php',
         async: true,
         data:{value:value},
         success:function(respuesta){

@@ -1,3 +1,18 @@
+function onLoadBody(){
+    
+    $(document).ready(function(){
+        // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+        $('.modal').modal();
+    });
+    
+    $(document).ready(function(){
+        $('.collapsible').collapsible();
+    });
+
+    $('.REQOBS').trigger('autoresize');
+
+}
+
 function buscarViabilidades(){
     
     var datos;
@@ -6,11 +21,11 @@ function buscarViabilidades(){
     
     jQuery.ajax({	
         type: 'POST',
-        url:'../../modelo/CargarRadicados.php',
+        url:'../../vistas/formulariosDinamicos/frmRadicados.php',
         async: true,
         data:{value:value},
         success:function(respuesta){
-            
+
             document.getElementById('resultado').innerHTML='<p>'+ respuesta + '</p>';
 
         },
@@ -26,32 +41,25 @@ function buscarViabilidades(){
 
 function mas(cod){
     
-    document.getElementById("mas").style.display = "block";
-    document.body.style.overflow = "hidden";
+    $('#modal1').modal('open');
+    
+    value = cod;
     
     jQuery.ajax({	
         type: 'POST',
-        url:'../../modelo/consultas/frmListas.php',
+        url:'../../vistas/formulariosDinamicos/frmListas.php',
         async: true,
         data:{value:value},
         success:function(respuesta){
             
-            document.getElementById('list').innerHTML='<p>'+ respuesta + '</p>';
+            document.getElementById('collapsible').innerHTML='<p>'+ respuesta + '</p>';      
 
         },
 
         error: function () {
             alert("Error inesperado")
             window.top.location ="../index.html";	
-        }
-        
+        } 
     });
-    
-}
-
-function cerrarFrmExterno(id){
-    
-    document.getElementById(id).style.display = "none";
-    document.body.style.overflow = "scroll";
     
 }

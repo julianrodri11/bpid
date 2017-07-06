@@ -8,27 +8,23 @@
 	<?php require_once '../links.php';?>
         <script type="text/javascript" src="../js/formularios/frm_listas_radicar.js"></script>
 	<script type="text/javascript" src="../../modelo/fun_propias/validacion_campos.js"></script>
-        <script>
-        $( function() {
-          $( "#listas" ).accordion();
-        });
-        
-        $( function() {
-          $( "#listas2" ).accordion();
-        });
-        </script>
+
         <link type="text/css" rel="stylesheet" href="../css/cssbpid/styles.css">
 </head>
 
-<body onload="buscarViabilidades('0');">
-        
-    <div id="mas" class="frm_externo">
-        <div class="cerrar" onclick="cerrarFrmExterno('mas');"></div>
-        <div class="form_ext">
-            <div id="list">
-                
-            </div>
-        </div>
+<body onload="onLoadBody();">
+
+    <div id="modal1" class="modal modal-fixed-footer">
+      <div class="modal-content">
+          <h4>Lista de opciones</h4>
+          <p>Selecciona los items y agregue observaciones si asi lo desea.</p>
+          <ul id="collapsible" class="collapsible" data-collapsible="accordion">
+
+          </ul>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Guardar cambios</a>
+      </div>
     </div>
     
     <div id="d_error" title="ALERTA"></div>

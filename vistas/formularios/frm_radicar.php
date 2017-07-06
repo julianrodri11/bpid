@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -33,8 +34,9 @@
 									<div class="opcionesbtn">
 										<div class="file-field input-field">
 										      <div class="btn">
-										        <span>Archivo MGA</span>
-										        <input type="file" id="frm_archivo" name="frm_archivo" onchange="archivo_xml()" multiple>
+										        <span>Subir Archivo MGA</span>
+										        <input type="file" id="frm_archivo" name="frm_archivo" onchange="archivo_xml()" multiple
+										        alt="Cargar Archivo MGA WEB">
 										      </div>
 										      <div class="file-path-wrapper">
 										        <input class="file-path validate" type="text" placeholder="Upload one or more files">
@@ -53,7 +55,7 @@
 							<div class="row">
 								<div class="opcionesbtn">
 									<div class="input-field col s12 m12 l12">
-									<textarea class="materialize-textarea" id="frm_nom_proyecto" name="frm_nom_proyecto">
+									<textarea class="materialize-textarea" id="frm_nom_proyecto" name="frm_nom_proyecto" readonly>
 
 									</textarea>
           								<label for="textarea1">Nombre Proyecto</label>
@@ -70,7 +72,7 @@
 							<div class="row">
 								<div class="opcionesbtn">
 									<div class="input-field col s12 m12 l12">
-										<input id="frm_num_proyecto" name="frm_num_proyecto" type="text" />
+										<input id="frm_num_proyecto" name="frm_num_proyecto" type="text" readonly/>
 										<label for="frm_num_proyecto">numero Proyecto</label>
 										<div class="descripcion"></div>
 									</div>
@@ -84,7 +86,7 @@
 							<div class="row">
 								<div class="opcionesbtn">
 									<div class="input-field col s12 m12 l12">
-										<input id="frm_sector" name="frm_sector" type="text" />
+										<input id="frm_sector" name="frm_sector" type="text" readonly/>
 										<label for="frm_sector" id="d_frm_sector">Sector de Proyecto</label>
 										<div class="descripcion"></div>
 									</div>
@@ -98,7 +100,7 @@
 							<div class="row">
 								<div class="opcionesbtn">
 									<div class="input-field col s12 m12 l12">
-										<input id="frm_localizacion" name="frm_localizacion" type="text" />
+										<input id="frm_localizacion" name="frm_localizacion" type="text" readonly/>
 										<label for="frm_localizacion">Localizacion Proyecto</label>
 										<div class="descripcion"></div>
 									</div>
@@ -113,7 +115,7 @@
 							<div class="row">
 								<div class="opcionesbtn">
 									<div class="input-field col s12 m12 l12">
-										<input id="frm_valor" name="frm_valor" type="text" />
+										<input id="frm_valor" name="frm_valor" type="text" readonly/>
 										<label for="frm_valor">Valor Proyecto</label>
 										<div class="descripcion"></div>
 									</div>
@@ -127,7 +129,7 @@
 							<div class="row">
 								<div class="opcionesbtn">
 									<div class="input-field col s12 m12 l12">
-										<input id="frm_eje" name="frm_eje" type="text"  />
+										<input id="frm_eje" name="frm_eje" type="text"  readonly/>
 										<label for="frm_eje">Eje Proyecto</label>
 										<div class="descripcion"></div>
 									</div>
@@ -141,7 +143,7 @@
 							<div class="row">
 								<div class="opcionesbtn">
 									<div class="input-field col s12 m12 l12">
-										<input id="frm_programa" name="frm_programa" type="text" />
+										<input id="frm_programa" name="frm_programa" type="text" readonly/>
 										<label for="frm_programa">Programa Proyecto</label>
 										<div class="descripcion"></div>
 									</div>
@@ -156,7 +158,7 @@
 							<div class="row">
 								<div class="opcionesbtn">
 									<div class="input-field col s12 m12 l12">
-										<input id="frm_subprograma" name="frm_subprograma"  type="text" />
+										<input id="frm_subprograma" name="frm_subprograma"  type="text" readonly/>
 										<label for="frm_subprograma">Subprograma</label>
 										<div class="descripcion"></div>
 									</div>
@@ -194,12 +196,13 @@
       										 <option value="1">SI</option>
      										 <option value="2">NO</option>
      								    </select>
+     								     <label>PERTENECE AL POAI</label>
          							 <div id="d_frm_poai"></div>
 							        </div>
 							      </div>
 									<div class="row">
         							<div class="input-field col s12">
-							         <input  id="frm_entidad" name="frm_entidad" type="text" class="validate">
+							         <input id="frm_entidad" name="frm_entidad" type="text" class="validate">
          							 <label for="frm_entidad" id="lbl_frm_entidad">ENTIDAD PROPONENTE</label>
          							 <div id="d_frm_entidad"></div>
 							        </div>
